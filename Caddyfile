@@ -1,0 +1,8 @@
+www.helloch.cn {
+	redir https://helloch.cn{uri} permanent
+}
+
+helloch.cn {
+	root * /usr/share/caddy
+	file_server
+}
