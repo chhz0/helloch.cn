@@ -1,6 +1,6 @@
 git pull origin blog
 
-npm run docs:dev
+npm run docs:build
 
 docker compose down
 
