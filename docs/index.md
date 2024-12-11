@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Hello KonwStack"
   text: "A VitePress Site"
-  tagline: My great project tagline
+  tagline: My great project tagline，站点搭建中...
   actions:
     - theme: brand
       text: Markdown Examples
