@@ -8,15 +8,12 @@ hero:
   tagline: 欢迎来到 KonwStack，目前站点搭建中...
   image: '/kd-sleep.svg'
   actions:
-    # - theme: brand
-    #   text: Markdown Examples
-    #   link: /markdown-examples
     - theme: brand
       text: 快速导航
       link: /guide
     - theme: brand
       text: 关于本站
-      link: /about
+      link: /about/site
     - theme: alt
       text: Github Page
       link: http://chknowbase.site
@@ -26,18 +23,41 @@ hero:
 features:
   - icon: ⚡️
     title: gomall
-    details: 点击查看有go语言搭建的mall项目
+    details: 使用kitex和hertz搭建的mall项目
     link: https://github.com/chhz0/go-mall-kitex
-  - title: bitcake
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: ⚡️
+    title: asyncgo
+    details: 由gin搭建的异步任务处理框架
+    link: https://github.com/chhz0/asyncgo
+  - icon: ⚡️
+    title: gopkg
+    details: go语言公共包
+    link: https://github.com/chhz0/go-pkg
+  - icon: ⚡️
+    title: gobitcask
+    details: 基于bitcask实现的kv存储
+    link: https://github.com/chhz0/go-bitDB/README.md
 ---
+## TODO <Badge type="tip" text="TODO List" />
 
+::: info
+- 添加Redis内容
+- 添加MySQL内容
+- 添加Linux内容
+- 添加Docker内容
+- 添加Golang内容
+:::
+
+## 更新日志 <Badge type="tip" text="Log" />
+
+::: tip
+请前往[关于/日志](/about/log)查看
+:::
+
+## 关于vitepress
+
+::: details 点击查看vitepress相关
 ## 开始使用 vitepress
-
 本站目前使用vitpress的默认主题.
 
 > 推荐阅读
@@ -81,10 +101,4 @@ vitepress的路由是基于文件的路由，根据docs目录下的md文件映�
 > 推荐阅读
 > [vitepress/site-config文档](https://vitepress.dev/zh/reference/site-config)
 
-## 徽章
-### Title <Badge type="info" text="default" />
-### Title <Badge type="tip" text="^1.9.0" />
-### Title <Badge type="warning" text="beta" />
-### Title <Badge type="danger" text="caution" />
-
-### Title <Badge type="info">custom element</Badge>
+:::
