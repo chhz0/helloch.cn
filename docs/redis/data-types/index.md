@@ -4,7 +4,7 @@ prev:
   link: '/redis'
 next:
   text: '数据类型 - String'
-  link: '/redis/data-types/String'
+  link: '/redis/data-types/Strings'
 ---
 # Redis 数据类型 <Badge type="tip" text="Redis Data Types" />
 
