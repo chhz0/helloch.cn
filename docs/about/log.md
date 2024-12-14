@@ -1,5 +1,10 @@
 # 更新日志 <Badge type="tip" text="Log" />
 
+- 2024-12-15
+  - 新增[Redis/data-types/Set](../redis/data-types/Sets.md)
+  - 新增[Redis/data-types/Hash](../redis/data-types/Hashes.md)
+  - 新增[Redis/data-types/encoding-hashtable](../redis/data-types/encoding-hashtable)
+
 - 2024-12-13
   - 新增[Redis/data-types/List](../redis/data-types/Lists)
   - 新增[Redis/data-types/encoding-sds](../redis/data-types/encoding-sds)

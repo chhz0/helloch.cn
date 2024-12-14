@@ -67,8 +67,8 @@ export default defineConfig({
 
 function nav(): DefaultTheme.NavItem[]{
   return [
-    { text: '导航', link: '/guide' },
-    { text: '算法', link: '/algo' },
+    { text: '导航', link: '/guide', activeMatch: '/guide/*' },
+    { text: '算法', link: '/algo', activeMatch: '/algo/*' },
     {
       text: '计算机',
       items: [
@@ -86,6 +86,7 @@ function nav(): DefaultTheme.NavItem[]{
         { text: 'Golang', link: '/golang', activeMatch: '/golang/*' },
         { text: 'Java', link: '/java', activeMatch: '/java/*' },
         { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
+        { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
       ]
     },
     {
@@ -106,8 +107,8 @@ function nav(): DefaultTheme.NavItem[]{
     },
     { text: '关于',
       items: [
-        { text: '本站', link: '/about/site' },
-        { text: '日志', link: '/about/log' },
+        { text: '本站', link: '/about/site', activeMatch: '/about/site/*' },
+        { text: '日志', link: '/about/log', activeMatch: '/about/log/*' },
       ]
     },
   ]
@@ -163,7 +164,9 @@ function sidebarRedis(): DefaultTheme.SidebarItem[] {
           items: [ {text: 'ZIPLIST', link: 'encoding-zip-list' } ]
         },
         { text: 'Sets', link: 'Sets' },
-        { text: 'Hashes', link: 'Hashes' },
+        { text: 'Hashes', link: 'Hashes',
+          items: [ {text: 'HASHTABLE', link: 'encoding-hashtable' } ]
+        },
         { text: 'ZSet', link: 'ZSet' },
       ],
     },
@@ -203,12 +206,21 @@ function sidebarRedis(): DefaultTheme.SidebarItem[] {
       ]
     },
     {
-      text: '集群',
+      text: 'Redis - 集群',
       base: '/redis/cluster/',
       link: '/',
       collapsed: false,
       items:[
         { text: '集群介绍', link: 'intro' },
+      ]
+    },
+    {
+      text: 'Redis - 命令',
+      base: '/redis/command/',
+      link: '/',
+      collapsed: false,
+      items:[
+        { text: 'Redis 键(keys)', link: 'keys' }
       ]
     },
     { text: 'interview', link: 'interview' }
