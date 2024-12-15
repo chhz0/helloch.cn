@@ -56,6 +56,7 @@ Redis Set的底层编码是: `INTSET`, `HASHTABLE`
 
 > 值得注意的是Redis Hash使用的底层编码也有`HASHTABLE`
 
+Set 使用`HASHTABLE`编码时，只存储键，不存储值，因而其key永远指向`NULL`
 ![redis-encoding-hashtable](../../public/redis/redis-encoding-hashtable.drawio.svg)
 
 > [!NOTE] 编码详解

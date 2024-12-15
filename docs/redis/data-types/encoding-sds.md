@@ -1,10 +1,10 @@
 ---
 prev:
-  text: '数据类型 - String'
-  link: 'redis/data-types/Strings'
+  text: '数据类型 - Stream'
+  link: 'redis/data-types/Stream'
 next:
-  text: '数据类型 - List'
-  link: '/redis/data-types/Lists'
+  text: '编码 - ZIPLIST'
+  link: '/redis/data-types/encoding-zip-list'
 ---
 # SDS <Badge type="tip" text="Redis Encoding SDS" />
 

@@ -157,17 +157,20 @@ function sidebarRedis(): DefaultTheme.SidebarItem[] {
       link: '/',
       collapsed: false,
       items:[
-        { text: 'Strings', link: 'Strings',
-          items: [ { text: 'SDS', link: 'encoding-sds' } ]
-        },
-        { text: 'Lists', link: 'Lists',
-          items: [ {text: 'ZIPLIST', link: 'encoding-zip-list' } ]
-        },
+        { text: 'Strings', link: 'Strings' },
+        { text: 'Lists', link: 'Lists' },
         { text: 'Sets', link: 'Sets' },
-        { text: 'Hashes', link: 'Hashes',
-          items: [ {text: 'HASHTABLE', link: 'encoding-hashtable' } ]
-        },
+        { text: 'Hashes', link: 'Hashes' },
         { text: 'ZSet', link: 'ZSet' },
+        { text: 'Stream', link: 'Stream' },
+        { text: 'encoding', 
+          items: [
+            { text: 'SDS', link: 'encoding-sds' },
+            { text: 'ZIPLIST', link: 'encoding-zip-list' },
+            { text: 'HASHTABLE', link: 'encoding-hashtable' },
+            { text: 'SKIPLIST', link: 'encoding-skip-list' },
+          ]
+        },
       ],
     },
     {

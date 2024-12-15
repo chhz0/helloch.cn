@@ -1,10 +1,10 @@
 ---
 prev:
-  text: '数据类型 - List'
-  link: 'redis/data-types/Lists'
+  text: '编码 - SDS'
+  link: 'redis/data-types/encoding-sds'
 next:
-  text: '数据类型 - Sets'
-  link: '/redis/data-types/Sets'
+  text: '编码 - HASHTABLE'
+  link: '/redis/data-types/encoding-hashtable'
 ---
 # ZIPLIST <Badge type="tip" text="Redis Encoding ZIPLIST" />
 

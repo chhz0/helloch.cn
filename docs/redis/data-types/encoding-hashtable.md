@@ -1,16 +1,16 @@
 ---
 prev:
-  text: '数据类型 - Hash'
-  link: 'redis/data-types/Hashes'
+  text: '编码 - ZIPLIST'
+  link: 'redis/data-types/encoding-zip-list'
 next:
-  text: '数据类型 - ZSet'
-  link: '/redis/data-types/ZSet'
+  text: '编码 - SKIPLIST'
+  link: '/redis/data-types/encoding-skip-list'
 ---
 # HashTable <Badge type="tip" text="Redis Encoding HASHTABLE" />
 
-通过`HASHTABLE`可以使用O(1)时间复杂度能够快速找到key对应的value，简单理解，`HASHTABLE`是一个目录，可以帮助我们快速找到需要内容
+`HASHTABLE`可以使用O(1)时间复杂度能够快速找到`field`对应的`value`，简单理解，`HASHTABLE`是一个目录，可以帮助我们快速找到需要内容
 
-`HASHTABLE`的结构
+`HASHTABLE`的结构:
 ```c
 typedef struct dictht {
     dictEntry **table;
@@ -20,16 +20,34 @@ typedef struct dictht {
 } dictht;
 ```
 
-最外层封装一个dictht结构，字段含义如下：
+最外层封装一个`dictht`结构，字段含义如下：
 - `Table`: 指向实际hash存储。存储可以看做一个数组
 - `Size`: 哈希表大小，实际就是dictEntry有多少元素空间
-- `Sizemask`: 哈希表大小的掩码表示，总是等于size-1. 这个属性和哈希值一起决定一个键应该放到table数组的那个索引上面，规则Index=hash&sizemask.
+- `Sizemask`: 哈希表大小的掩码表示，总是等于size-1. 这个属性和哈希值一起决定一个键应该放到table数组的那个索引上面，规则 **Index = hash & sizemask**.
 - `Used`: 表示已经使用的节点数量。通过这个字段可以查询目前HASHTABLE元素总量
+
+`dictEntry`结构如下：
+```c
+typedef struct dictEntry {
+    void *key;
+
+    union {
+      void *val;
+      uint64_t u64;
+      int64_t s64;
+      double d;
+    } v;
+    struct dictEntry *next;
+
+    void *metadata[];
+} dictEntry;
+```
 
 ![redis-encodng-hashtable-struct](../../public/redis/redis-encoding-hashtable-struct.drawio.svg)
 
 ## Hash 渐进式扩容/缩容
 
+### 扩容
 渐进式扩容就是一点一点扩大`HASHTABLE`的容量，默认值为4 (#define DICT_HT_INTTIAL_SIZE 4)
 为了实现渐进式扩容，Redis没有直接把dictht暴露给上层，而是再封装了一层
 
@@ -48,7 +66,7 @@ typedef struct dict {
 `dictEntry`是链表结构，用拉链法解决Hash冲突，用的是头插法
 
 实际上，平时使用的时候就是一个`HASHTABLE`，在触发扩容之后，就会有两个`HASHTABLE`同时使用，详细过程如下：
-当向字典添加元素时，需要扩容时会进行rehash
+当向字典添加元素时，需要扩容时会进行`rehash`
 
 ::: info Rehash流程分以下三步：
 1. 为新Hash表ht[1]分配空间，新表大小为第一个大于等于原表ht[0]的2倍used的2次幂。例如，原表used=500，2*used=1000，第一个大于1000的2次幂为1024，因此新表的大小为1024. 此时，字典同时持有ht[0]和ht[1]两个哈希表，字典的偏移索引rehashidx从静默状态-1，设置为0，表示Rehash正式开始工作。
@@ -57,8 +75,8 @@ typedef struct dict {
 小总结：渐进式扩容的核心是操作时顺带迁移
 :::
 
-扩容时机
-redis提出一个负载因子的概念，负载因子表示目前Redia HASHTABLE的负载情况
+### 扩容时机
+redis提出一个负载因子的概念，负载因子表示目前Redis HASHTABLE的负载情况
 
 用k表示负载因子：`k=ht[0].used/ht[0].size`，也就是使用空间和总空间大小的比例，redis会根据负载因子的情况来扩容：
 

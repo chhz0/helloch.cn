@@ -41,11 +41,18 @@ features:
 ## TODO <Badge type="tip" text="TODO List" />
 
 ::: info
-- 添加Redis内容
-- 添加MySQL内容
-- 添加Linux内容
-- 添加Docker内容
-- 添加Golang内容
+- 添加[Redis](./redis/index)内容 [更新中]
+- 添加[MySQL](./mysql/index)内容 [更新中]
+- 添加Linux内容 [待定]
+- 添加Docker内容 [待定]
+- 添加Golang内容 [待定]
+- 添加Network内容 [待定]
+- 添加Algo内容 [待定]
+- 添加Git内容 [待定]
+- 添加Java内容 [待定]
+- 添加Rust内容 [待定]
+- 添加Vue内容 [待定]
+- 添加React内容 [待定]
 :::
 
 ## 更新日志 <Badge type="tip" text="Log" />
