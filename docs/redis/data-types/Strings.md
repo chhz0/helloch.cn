@@ -92,6 +92,8 @@ struct __attribute__((__packed__)) sdshdr8 {
 
 `EMBSTR`和`RAW`是由redisObject和`SDS`两个结构组成，两者差异在于`EMBSTR`编码下redisObject和SDS是连续的内存，RAW编码下redisObject和SDS的内存是分开的.
 
+![redis-string-embstr-raw](../../public/redis/redis-string-embstr-raw.drawio.svg)
+
 EMBSTR的优缺点：
   1. 优点：一次性分配内存，redisObject和SDS两个结构一次性分配内存
   2. 缺点：重新分配空间时，整体需要重新再分配
@@ -101,5 +103,5 @@ EMBSTR的优缺点：
 1. INT -> RAW: 当内存不再是整形，或者大小超过了long
 2. EMBSTR -> RAW: 任何写操作之后EMBSTR都会变成RAW
 
-> [!NOTE]
+> [!NOTE] SDS解释
 > 🔗 [查看SDS](./encoding-sds.md)
