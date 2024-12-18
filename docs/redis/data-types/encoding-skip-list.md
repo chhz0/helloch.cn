@@ -19,9 +19,9 @@ redis中跳表的两处应用：
 
 为了提高查找的性能，Redis引入跳表，跳表在链表的基础上，给链表增加了多级的索引，通过索引可以一次实现多个节点的跳跃，提高性能
 
-## ZIPLIST 结构
+## SKIPLIST 结构
 
-Redis `ZIPLIST`的结构:
+Redis `SKIPLIST` 单节点的结构:
 ```c
 typedef struct zskiplistNode {
     sds ele;
@@ -42,7 +42,7 @@ typedef struct zskiplistNode {
 
 > 在标准的跳表中，score值是不可重复的，但是在Redis ZIPLIST中，score值是可重复的，增加了回退指针
 
-## ZIPLIST 细节
+## SKIPLIST 细节
 
 - Redis跳表单个节点有几层？
 

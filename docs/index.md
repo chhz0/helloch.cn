@@ -6,7 +6,9 @@ hero:
   name: "Hello KonwStack"
   text: "A VitePress Site"
   tagline: 欢迎来到 KonwStack，目前站点搭建中...
-  image: '/kd-sleep.svg'
+  image:
+    light: '/kd-sleep.svg'
+    dark: '/kd-sleep copy.svg'
   actions:
     - theme: brand
       text: 快速导航

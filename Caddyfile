@@ -6,3 +6,7 @@ helloch.cn {
 	root * /usr/share/caddy
 	file_server
 }
+
+blog.helloch.cn {
+	redir https://helloch.cn{uri} permanent
+}
