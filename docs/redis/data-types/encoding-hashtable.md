@@ -43,7 +43,7 @@ typedef struct dictEntry {
 } dictEntry;
 ```
 
-![redis-encodng-hashtable-struct](../../public/redis/redis-encoding-hashtable-struct.drawio.svg)
+![redis-encodng-hashtable-struct](/redis/redis-encoding-hashtable-struct.drawio.svg)
 
 ## Hash 渐进式扩容/缩容
 

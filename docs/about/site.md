@@ -1,8 +1,8 @@
 # 关于本站 <Badge type="tip" text="About" />
 
-本站使用vitepress进行搭建，如果你也想搭建一个类似本站的网站，可以参考以下链接：
+本站点计划构建一个**知识库站点，记录学习、记录随笔、分享知识，同时作为个人博客的归档站点**...
 
-- [vitepress](https://vitepress.dev/zh/)
+使用`vitepress`进行搭建，如果你也想搭建一个类似本站的网站，可以参考[官方文档](https://vitepress.dev/zh/)
 
 这里使用了vitepress的默认主题，后续将根据需求自定义主题。
 

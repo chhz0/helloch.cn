@@ -3,15 +3,15 @@ import { DefaultTheme, defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh',
-  title: "Hello KonwStack",
-  // titleTemplate: 'KonwStack',
-  description: "A VitePress Site",
+  title: "HelloCH",
+  titleTemplate: 'HelloCH',
+  description: "知识库：学习|记录|随笔",
   head: [['link', { rel: 'icon', href: '/kd-sleep copy.svg' }]],
   base: '/',
   cleanUrls: true,
+
   themeConfig: {
-    // logo: '/kd-sleep.svg',
-    siteTitle: "KnowStack",
+    // siteTitle: "HelloCH",
     lastUpdated: {
       text: '最近更新于',
       formatOptions: {
@@ -36,7 +36,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/chhz0/helloch.cn/tree/blog' }
+      { icon: 'github', link: 'https://github.com/chhz0/helloch.cn/tree/blog' },
     ],
 
     editLink: {
@@ -58,10 +58,18 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
+    externalLinkIcon: true,
 
     footer: {
       message: 'Released under the <a href="https://github.com/chhz0/helloch.cn/blob/main/LICENSE">MIT License</a>.',
       copyright: `Copyright © 2024-${new Date().getFullYear()} chhz0 | <a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备2024347558号</a>`
+    },
+  },
+
+  markdown: {
+    toc: {
+      level: [2, 3],
+      listTag: "ul"
     }
   }
 })
@@ -75,13 +83,13 @@ function nav(): DefaultTheme.NavItem[]{
       items: [
         { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
         { text: 'Network', link: '/network', activeMatch: '/network/*' },
-
       ]
     },
     {
       text: '编程语言',
       items: [
         { text: 'Golang ✨', link: '/golang', activeMatch: '/golang/*' },
+        { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
         { text: 'Java', link: '/java', activeMatch: '/java/*' },
         { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
         { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
@@ -248,7 +256,7 @@ function sidebarRedis(): DefaultTheme.SidebarItem[] {
         { text: 'Redis 键(keys)', link: 'keys' }
       ]
     },
-    { text: 'interview', link: 'interview' }
+    { text: 'Redis-interview', link: 'interview' }
   ]
 }
 

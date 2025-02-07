@@ -38,7 +38,7 @@ typedef struct dict {
 - `dict` 是Redis的字典结构，存储键值对.
 - `expires` 是Redis的过期键字典结构，存储过期键.
 
-![redis-redisDb-struct](../../public/redis/redis-redisDb-struct.drawio.svg)
+![redis-redisDb-struct](/redis/redis-redisDb-struct.drawio.svg)
 
 ## 操作Redis在内存中的表现
 

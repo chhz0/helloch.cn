@@ -47,6 +47,6 @@ Redis的I/O多路复用机制，是指Redis在处理客户端请求时，通过�
 
 Redis做了一层包装，叫`Reactor模型`，本质就是监听各种事件，当事件发生时，将事件分发给不同的处理器
 
-![redis-reactor](../../public/redis/redis-reactor.drawio.svg)
+![redis-reactor](/redis/redis-reactor.drawio.svg)
 
 I/O多路复用让redis单线程有了较大的并发度，这里是并发，不是并行，这种模式下，Redis单核的性能可以是被充分利用

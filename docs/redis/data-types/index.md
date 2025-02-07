@@ -54,7 +54,7 @@ typedef struct reidsObject {
 
 RedisObject和不同的数据类型及其编码的关系图:
 
-![redisObject-dependence](../../public/redis/redis-object-not.drawio.svg)
+![redisObject-dependence](/redis/redis-object-not.drawio.svg)
 
 对于Redis在不同场景下使用不同的数据类型，数据类型又有不同的编码，其一般会使用如下规则：
 

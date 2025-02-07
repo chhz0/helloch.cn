@@ -77,4 +77,4 @@ typedef struct list {
 - 当数据较少时，`QUICKLIST`的节点只有一个，相当于一个`ZIPLIST`.
 - 当数据较多时，则同时利用`ZIPLIST`和`LINKEDLIST`的优点.
 
-![redis-quicklist-map](../../public/redis/redis-quicklist-map.drawio.svg)
+![redis-quicklist-map](/redis/redis-quicklist-map.drawio.svg)
