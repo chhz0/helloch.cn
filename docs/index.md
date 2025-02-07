@@ -27,18 +27,18 @@ features:
     title: gomall
     details: 使用kitex和hertz搭建的mall项目
     link: https://github.com/chhz0/go-mall-kitex
-  - icon: ⚡️
-    title: asyncgo
-    details: 由gin搭建的异步任务处理框架
-    link: https://github.com/chhz0/asyncgo
-  - icon: ⚡️
-    title: gopkg
-    details: go语言公共包
-    link: https://github.com/chhz0/go-pkg
-  - icon: ⚡️
-    title: gobitcask
-    details: 基于bitcask实现的kv存储
-    link: https://github.com/chhz0/go-bitDB/README.md
+  - icon: 🎟️
+    title: goiam
+    details: 由Go语言构建的身份和访问管理服务
+    link: https://github.com/chhz0/goiam
+  - icon: 🍬
+    title: go-component-base
+    details: go组件库
+    link: https://github.com/chhz0/go-component-base
+  # - icon: ⚡️
+  #   title: gobitcask
+  #   details: 基于bitcask实现的kv存储
+  #   link: https://github.com/chhz0/go-bitDB/README.md
 ---
 ## TODO <Badge type="tip" text="TODO List" />
 

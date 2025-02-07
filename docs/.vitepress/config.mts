@@ -82,6 +82,7 @@ function nav(): DefaultTheme.NavItem[]{
       text: '编程语言',
       items: [
         { text: 'Golang ✨', link: '/golang', activeMatch: '/golang/*' },
+        { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
         { text: 'Java', link: '/java', activeMatch: '/java/*' },
         { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
         { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
