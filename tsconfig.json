@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esNext",
+    "types": ["vite/client"],
+    "moduleResolution": "bundler",
+    "lib": ["esnext", "dom", "dom.iterable"]
+  },
+  "include": ["docs/.vitepress/**/*", "docs/components/**/*"],
+  "exclude": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "template",
+    "bin",
+    "docs/snippets",
+    "scripts"
+  ]
+}

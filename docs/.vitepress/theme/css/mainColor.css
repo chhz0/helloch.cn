@@ -1,0 +1,15 @@
+:root {
+    --vp-c-brand-1: #646cff;
+    --vp-c-brand-2: #747bff;
+    --github-card-bg: #ffffff;
+    --github-card-border: #e1e4e8;
+    --github-card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --link-color: #0969da;
+}
+
+.dark {
+    --github-card-bg: #0d1117;
+    --github-card-border: #30363d;
+    --github-card-hover-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    --link-color: #58a6ff;
+}

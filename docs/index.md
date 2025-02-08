@@ -25,27 +25,36 @@ hero:
     - theme: brand
       text: 关于本站
       link: /about/site
-features:
-  - icon: ⚡️
-    title: gomall
-    details: 使用kitex和hertz搭建的mall项目
-    link: https://github.com/chhz0/go-mall-kitex
-    linkText: 访问
-  - icon: 🎟️
-    title: goiam
-    details: 由Go语言构建的身份和访问管理服务
-    link: https://github.com/chhz0/goiam
-    linkText: 访问
-  - icon: 🍬
-    title: go-component-base
-    details: go组件库
-    link: https://github.com/chhz0/go-component-base
-    linkText: 访问
+# features:
+#   - icon: ⚡️
+#     title: gomall
+#     details: 使用kitex和hertz搭建的mall项目
+#     link: https://github.com/chhz0/go-mall-kitex
+#     linkText: 访问
+#   - icon: 🎟️
+#     title: goiam
+#     details: 由Go语言构建的身份和访问管理服务
+#     link: https://github.com/chhz0/goiam
+#     linkText: 访问
+#   - icon: 🍬
+#     title: go-component-base
+#     details: go组件库
+#     link: https://github.com/chhz0/go-component-base
+#     linkText: 访问
   # - icon: ⚡️
   #   title: gobitcask
   #   details: 基于bitcask实现的kv存储
   #   link: https://github.com/chhz0/go-bitDB/README.md
 ---
+
+## 个人开发项目
+<div class="repo-grid">
+  <GithubRepoCard
+    v-for="repo in repos"
+    :owner="repo.owner"
+    :repo="repo.repoName" />
+</div>
+
 
 ## TODO <Badge type="tip" text="TODO List" />
 
@@ -69,3 +78,32 @@ features:
 ::: tip
 请前往[关于/日志](/about/log)查看
 :::
+
+
+
+<script setup lang="ts">
+  import { ref } from "vue";
+
+  const repos = ref([
+    { owner: "chhz0", repoName: "goiam" },
+    { owner: "chhz0", repoName: "helloch.cn" },
+    { owner: "chhz0", repoName: "go-component-base" },
+  ]);
+</script>
+
+<style>
+.repo-grid {
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .repo-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+</style>

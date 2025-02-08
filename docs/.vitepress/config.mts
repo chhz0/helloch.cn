@@ -70,6 +70,12 @@ export default defineConfig({
     toc: {
       level: [2, 3],
       listTag: "ul"
+    },
+  },
+  vite: {
+    envPrefix: "VITE_",
+    define: {
+      // 'import.meta.env.VITE_GITHUB_TOKEN': JSON.stringify(process.env.GITHUB_TOKEN)
     }
   }
 })
