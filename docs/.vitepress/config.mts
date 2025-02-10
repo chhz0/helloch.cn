@@ -1,5 +1,108 @@
 import { DefaultTheme, defineConfig } from 'vitepress'
 
+const SITE_BASE = '/'
+const GITHUB_REPO_EDIT = 'https://github.com/chhz0/helloch.cn/edit/blog/docs/'
+const ALGOLIA_CONFIG = {
+  appId: 'YLWOYZ6XJI',
+  apiKey: 'd46c412d53ca0c1ec4aad7ffaf858a09',
+  indexName: 'helloch',
+}
+
+const sidebarConfig: DefaultTheme.Sidebar = {
+  '/guide/':[{ text: '导航', items: sidebarGuide() }],
+  '/algo/':[{
+    text: '算法',
+    base: '/algo/',
+    items: sidebarAlgo(),
+    collapsed: false,
+  }],
+  '/redis/':[{
+    text: 'Redis',
+    base: '/redis/',
+    items: sidebarRedis(),
+    collapsed: false,
+  }],
+  '/mysql/':[{
+    text: 'MySQL',
+    base: '/mysql/',
+    items: sidebarMySQL(),
+    collapsed: false,
+  }],
+  '/golang/':[{
+    text: 'Golang',
+    base: '/golang/',
+    link: '/',
+    items: sidebarGo(),
+    collapsed: false,
+  }],
+}
+
+const navConfig: DefaultTheme.NavItem[] = [
+  // { text: '导航', link: '/guide', activeMatch: '/guide/*' },
+  { text: '算法', link: '/algo', activeMatch: '/algo/*' },
+  {
+    text: '计算机',
+    items: [
+      { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
+      { text: 'Network', link: '/network', activeMatch: '/network/*' },
+    ]
+  },
+  {
+    text: '编程语言',
+    items: [
+      { text: 'Golang ✨', link: '/golang', activeMatch: '/golang/*' },
+      { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
+      { text: 'Java', link: '/java', activeMatch: '/java/*' },
+      { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
+      { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
+    ]
+  },
+  {
+    text: '前端',
+    items: [
+      { text: 'Vue', link: '/vue', activeMatch: '/vue/*' },
+      { text: 'React', link: '/react', activeMatch: '/react/*' },
+    ]
+  },
+  {
+    text: '数据库',
+    items: [
+      { text: 'MySQL ✨', link: '/mysql', activeMatch: '/mysql/*' },
+      { text: 'Redis ✨', link: '/redis', activeMatch: '/redis/*' },
+      { text: 'MongoDB', link: '/mongodb', activeMatch: '/mongodb/*' },
+      { text: "MariaDB", link: '/mariadb', activeMatch: '/mariadb/*' }
+    ]
+  },
+  {
+    text: '中间件',
+    items: [
+      { text: '消息中间件',
+        items: [
+          { text: 'RabbitMQ', link: '/middleware/rabbitmq', activeMatch: '/middleware/rabbitmq/*' },
+          { text: 'Kafka ✨', link: '/middleware/kafka', activeMatch: '/middleware/kafka/*' },
+          { text: 'NATS', link: '/middleware/nats', activeMatch: '/middleware/nats/*' },
+          { text: 'RocketMQ', link: '/middleware/rocketmq', activeMatch: '/middleware/rocketmq/*' },
+          { text: 'Pulsar', link: '/middleware/pulsar', activeMatch: '/middleware/pulsar/*' },
+        ]
+      },
+      { text: 'Git ✨', link: '/middleware/git', activeMatch: '/middleware/git/*'  },
+      { text: 'Docker ✨', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
+      { text: 'http代理',
+        items: [
+          { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
+          { text: 'Caddy', link: '/middleware/caddy', activeMatch: '/middleware/caddy/*'  },
+        ]
+      }
+    ]
+  },
+  { text: '关于',
+    items: [
+      { text: '本站', link: '/about/site', activeMatch: '/about/site/*' },
+      { text: '日志', link: '/about/changelog', activeMatch: '/about/log/*' },
+    ]
+  },
+]
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh',
@@ -7,13 +110,14 @@ export default defineConfig({
   titleTemplate: 'HelloCH',
   description: "知识库：学习|记录|随笔",
   head: [['link', { rel: 'icon', href: '/kd-sleep copy.svg' }]],
-  base: '/',
+  base: SITE_BASE,
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   themeConfig: {
     // siteTitle: "HelloCH",
     lastUpdated: {
-      text: '最近更新于',
+      text: '最近更新时间',
       formatOptions: {
         dateStyle: 'short',
         timeStyle: 'short',
@@ -23,17 +127,9 @@ export default defineConfig({
       provider: 'algolia',
       options: searchAlgolia(),
     },
-
     // https://vitepress.dev/reference/default-theme-config
-    nav: nav(),
-
-    sidebar: {
-      '/guide/':[{ text: '导航', items: sidebarGuide() }],
-      '/algo/':[{ text: '算法', base: '/algo/', link: '/', items: sidebarAlgo() }],
-      '/redis/':[{ base: '/redis/', items: sidebarRedis(), }],
-      '/mysql/':[{ text: 'MySQL', base: '/mysql/', link: '/', items: sidebarMySQL(), }],
-      '/golang/':[{ text: 'Golang', base: '/golang/', link: '/', items: sidebarGo(), }],
-    },
+    nav: navConfig,
+    sidebar: sidebarConfig,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/chhz0/helloch.cn/tree/blog' },
@@ -80,74 +176,6 @@ export default defineConfig({
   }
 })
 
-function nav(): DefaultTheme.NavItem[]{
-  return [
-    // { text: '导航', link: '/guide', activeMatch: '/guide/*' },
-    { text: '算法', link: '/algo', activeMatch: '/algo/*' },
-    {
-      text: '计算机',
-      items: [
-        { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
-        { text: 'Network', link: '/network', activeMatch: '/network/*' },
-      ]
-    },
-    {
-      text: '编程语言',
-      items: [
-        { text: 'Golang ✨', link: '/golang', activeMatch: '/golang/*' },
-        { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
-        { text: 'Java', link: '/java', activeMatch: '/java/*' },
-        { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
-        { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
-      ]
-    },
-    {
-      text: '前端',
-      items: [
-        { text: 'Vue', link: '/vue', activeMatch: '/vue/*' },
-        { text: 'React', link: '/react', activeMatch: '/react/*' },
-      ]
-    },
-    {
-      text: '数据库',
-      items: [
-        { text: 'MySQL ✨', link: '/mysql', activeMatch: '/mysql/*' },
-        { text: 'Redis ✨', link: '/redis', activeMatch: '/redis/*' },
-        { text: 'MongoDB', link: '/mongodb', activeMatch: '/mongodb/*' },
-        { text: "MariaDB", link: '/mariadb', activeMatch: '/mariadb/*' }
-      ]
-    },
-    {
-      text: '中间件',
-      items: [
-        { text: '消息中间件',
-          items: [
-            { text: 'RabbitMQ', link: '/middleware/rabbitmq', activeMatch: '/middleware/rabbitmq/*' },
-            { text: 'Kafka ✨', link: '/middleware/kafka', activeMatch: '/middleware/kafka/*' },
-            { text: 'NATS', link: '/middleware/nats', activeMatch: '/middleware/nats/*' },
-            { text: 'RocketMQ', link: '/middleware/rocketmq', activeMatch: '/middleware/rocketmq/*' },
-            { text: 'Pulsar', link: '/middleware/pulsar', activeMatch: '/middleware/pulsar/*' },
-          ]
-        },
-        { text: 'Git ✨', link: '/middleware/git', activeMatch: '/middleware/git/*'  },
-        { text: 'Docker ✨', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
-        { text: 'http代理',
-          items: [
-            { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
-            { text: 'Caddy', link: '/middleware/caddy', activeMatch: '/middleware/caddy/*'  },
-          ]
-        }
-      ]
-    },
-    { text: '关于',
-      items: [
-        { text: '本站', link: '/about/site', activeMatch: '/about/site/*' },
-        { text: '日志', link: '/about/log', activeMatch: '/about/log/*' },
-      ]
-    },
-  ]
-}
-
 function sidebarAlgo(): DefaultTheme.SidebarItem[] {
   return [
     { text: '栈', link: '/stack' },
@@ -184,20 +212,20 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
 
 function sidebarRedis(): DefaultTheme.SidebarItem[] {
   return [
-    { text: 'Redis intro', link: '/' },
+    { text: 'Redis 简介', link: '/' },
     {
       text: 'Redis - 数据类型',
       base: '/redis/data-types/',
       link: '/',
       collapsed: false,
       items:[
-        { text: 'Strings', link: 'Strings' },
-        { text: 'Lists', link: 'Lists' },
-        { text: 'Sets', link: 'Sets' },
-        { text: 'Hashes', link: 'Hashes' },
-        { text: 'ZSet', link: 'ZSet' },
-        { text: 'Stream', link: 'Stream' },
-        { text: 'encoding',
+        { text: 'Strings - 字符串', link: 'Strings' },
+        { text: 'Lists - 列表', link: 'Lists' },
+        { text: 'Sets - 集合', link: 'Sets' },
+        { text: 'Hashes - 哈希', link: 'Hashes' },
+        { text: 'ZSet - 有序集合', link: 'ZSet' },
+        { text: 'Stream - 流', link: 'Stream' },
+        { text: 'encoding - 编码',
           items: [
             { text: 'SDS', link: 'encoding-sds' },
             { text: 'ZIPLIST', link: 'encoding-zip-list' },
@@ -286,9 +314,7 @@ function sidebarGo(): DefaultTheme.SidebarItem[] {
 
 function searchAlgolia(): DefaultTheme.AlgoliaSearchOptions {
   return {
-    appId: 'YLWOYZ6XJI',
-    apiKey: 'd46c412d53ca0c1ec4aad7ffaf858a09',
-    indexName: 'helloch',
+    ...ALGOLIA_CONFIG,
     placeholder: '搜索文档',
     translations: {
       button: {
