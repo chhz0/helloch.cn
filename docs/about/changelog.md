@@ -3,6 +3,28 @@
 > [!NOTE] 
 > 日志记录由 [git_commit_2md.py](https://github.com/chhz0/helloch.cn/blob/blog/tools/git_commit_2md.py) 生成，其中部分内部md链接可能因为md文件的删除或者移动导致失效，推荐使用`Ctrl K`搜索文档. 
 
+## `2025-02-10`
+
+### Commit SHA: `72a9010`
+
+**Message**: build: 优化构建流程并添加自动化生成日志功能
+
+- 新增 py-gen-log 目标到 Makefile，用于自动生成日志
+- 更新 docs/.vitepress/config.mts，优化导航和侧边栏配置
+- 移除 @heroicons/vue 依赖
+- 重构 build.sh 脚本，改为 dockerup.sh，简化构建流程
+
+### Commit SHA: `24d7dd9`
+
+**Message**: feat: 生成更新日志工具
+
+- 新增git commit转为md文件的py工具
+- 优化更新日志页面，记录所有提交信息
+- Added:
+  - [about/changelog.md](/about/changelog)
+- Deleted:
+  - [about/log.md](/about/log)
+
 ## `2025-02-08`
 
 ### Commit SHA: `fa7a7da`
