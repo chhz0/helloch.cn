@@ -19,9 +19,6 @@ hero:
     - theme: alt
       text: Github/chhz0
       link: https://github.com/chhz0/
-    - theme: alt
-      text: Github Page
-      link: http://chknowbase.site
     - theme: brand
       text: 关于本站
       link: /about/site
@@ -47,15 +44,6 @@ hero:
   #   link: https://github.com/chhz0/go-bitDB/README.md
 ---
 
-## 个人开发项目
-<div class="repo-grid">
-  <GithubRepoCard
-    v-for="repo in repos"
-    :owner="repo.owner"
-    :repo="repo.repoName" />
-</div>
-
-
 ## TODO <Badge type="tip" text="TODO List" />
 
 ::: info
@@ -76,34 +64,5 @@ hero:
 ## 更新日志 <Badge type="tip" text="Log" />
 
 ::: tip
-请前往[关于/日志](/about/log)查看
+请前往[关于/日志](/about/changelog)查看
 :::
-
-
-
-<script setup lang="ts">
-  import { ref } from "vue";
-
-  const repos = ref([
-    { owner: "chhz0", repoName: "goiam" },
-    { owner: "chhz0", repoName: "helloch.cn" },
-    { owner: "chhz0", repoName: "go-component-base" },
-  ]);
-</script>
-
-<style>
-.repo-grid {
-    display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-}
-
-/* 移动端适配 */
-@media (max-width: 640px) {
-  .repo-grid {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-}
-</style>

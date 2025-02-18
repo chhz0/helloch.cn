@@ -4,9 +4,13 @@
     "target": "esNext",
     "types": ["vite/client"],
     "moduleResolution": "bundler",
-    "lib": ["esnext", "dom", "dom.iterable"]
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./docs/.vitepress/*"]
+    }
   },
-  "include": ["docs/.vitepress/**/*", "docs/components/**/*"],
+  "include": ["docs/.vitepress/**/*"],
   "exclude": [
     "**/node_modules/**",
     "**/dist/**",
