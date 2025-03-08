@@ -1,4 +1,3 @@
-# helloch.cn
-个人网站，部署在阿里云ecs
+# helloch.cn - vitepress
 
-- 查看博客内容前往网站[helloch.cn](https://helloch.cn)
+使用vitepress搭建的博客，域名为==>[vitepress.helloch.cn](https://vitepress.helloch.cn)
