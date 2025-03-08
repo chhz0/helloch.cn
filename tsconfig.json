@@ -7,7 +7,7 @@
     "lib": ["esnext", "dom", "dom.iterable"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./docs/.vitepress/*"]
+      "@/*": ["./docs/.vitepress/theme"]
     }
   },
   "include": ["docs/.vitepress/**/*"],

@@ -5,6 +5,7 @@ aside: false
 sidebar: false
 ---
 <script setup lang="ts">
+  // import GithubRepoCard from "@/components/dev/GithubRepoCard.vue";
   import { ref } from "vue";
   const repos = ref([
     { owner: "chhz0", repoName: "goiam" },

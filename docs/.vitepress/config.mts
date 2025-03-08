@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 
-// import tailwindcss from '@tailwindcss/vite'
+import tailwindcss from '@tailwindcss/vite'
 
 import sidebarConfig from './tsconfig/sidebarSet'
 import navConfig from './tsconfig/nav'
@@ -78,7 +78,6 @@ export default defineConfig({
 
   vite: {
     plugins: [
-      // tailwindcss(),
     ],
     resolve: {
       alias: {
