@@ -1,0 +1,63 @@
+name: Vitepress Build
+
+on:
+  push:
+    branches:
+      - vitepress
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout vitepress branch
+        uses: actions/checkout@v4
+        with:
+          ref: vitepress
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build vitepress
+        run: npm run build
+
+      - name: Archive vitepress built output
+        run: |
+          mkdir -p /tmp/dist
+          cp -a docs/.vitepress/dist/* /tmp/dist/
+
+      - name: Check out main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Copy vitepress built output to main branch
+        run: |
+          rm -rf vitepress/dist/*
+          cp -a /tmp/dist/* vitepress/
+
+      - name: Commit and push changes (if needed)
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+          else
+            git config user.name "ch"
+            git config user.email "ch1447571882@qq.com"
+            git add .
+            git commit -m "Update vitepress/dist from vitepress branch"
+          fi
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_SECRET }}
+        run: |
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" main
