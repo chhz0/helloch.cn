@@ -7,6 +7,12 @@ helloch.cn {
 	file_server
 }
 
-blog.helloch.cn {
-	redir https://helloch.cn{uri} permanent
+vitepress.helloch.cn {
+	root * /usr/share/caddy/vitepress
+	file_server
+}
+
+hugo.helloch.cn {
+	root * /usr/share/caddy/hugo
+	file_server
 }
