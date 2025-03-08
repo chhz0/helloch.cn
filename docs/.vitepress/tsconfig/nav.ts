@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'vitepress'
 
 const navConfig: DefaultTheme.NavItem[] = [
-  // { text: '项目', link: '/github.repo', activeMatch: '/github.repo/*' },
+  { text: '项目', link: '/github.repo', activeMatch: '/github.repo/*' },
   // { text: '算法', link: '/algo', activeMatch: '/algo/*' },
   {
     text: '后端',
