@@ -1,14 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
 
-import tailwindcss from '@tailwindcss/vite'
-
 import sidebarConfig from './tsconfig/sidebarSet'
 import navConfig from './tsconfig/nav'
 import searchAlgolia from './tsconfig/searchAlgolia'
 
 const SITE_BASE = '/'
-const GITHUB_REPO_EDIT = 'https://github.com/chhz0/helloch.cn/edit/blog/docs/'
+const GITHUB_REPO_EDIT = 'https://github.com/chhz0/helloch.cn/edit/vitepress/docs/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -39,12 +37,12 @@ export default defineConfig({
     sidebar: sidebarConfig,
     // sidebar: autoSidebar('/docs'),
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/chhz0/helloch.cn/tree/blog' },
+      { icon: 'github', link: 'https://github.com/chhz0' },
     ],
 
     editLink: {
       pattern: GITHUB_REPO_EDIT+':path',
-      text: '修改此页ԅ(¯﹃¯ԅ)'
+      text: '提供建议X﹏X'
     },
 
     docFooter: {
@@ -77,8 +75,6 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [
-    ],
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./docs/.vitepress/theme', import.meta.url)),

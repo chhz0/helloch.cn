@@ -1,7 +1,6 @@
 import { DefaultTheme } from 'vitepress'
 
 const navConfig: DefaultTheme.NavItem[] = [
-  { text: '项目', link: '/github.repo', activeMatch: '/github.repo/*' },
   // { text: '算法', link: '/algo', activeMatch: '/algo/*' },
   {
     text: '后端',
@@ -11,7 +10,11 @@ const navConfig: DefaultTheme.NavItem[] = [
       {
         text: 'langs',
         items: [
-          { text: 'Golang ✨', link: '/golang', activeMatch: '/golang/*' },
+          {
+            text: 'Golang ',
+            link: '/golang',
+            activeMatch: '/golang/*',
+          },
           { text: 'Java ☕', link: '/java', activeMatch: '/java/*' },
           { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
           // { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
@@ -40,11 +43,11 @@ const navConfig: DefaultTheme.NavItem[] = [
       { text: 'Docker ✨', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
       // { text: 'http代理',
       //   items: [
-      //     { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
-      //     { text: 'Caddy', link: '/middleware/caddy', activeMatch: '/middleware/caddy/*'  },
-      //   ]
-      // }
-    ]
+        //     { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
+        //     { text: 'Caddy', link: '/middleware/caddy', activeMatch: '/middleware/caddy/*'  },
+        //   ]
+        // }
+      ]
   },
   {
     text: '前端',
@@ -53,6 +56,7 @@ const navConfig: DefaultTheme.NavItem[] = [
       { text: 'React', link: '/react', activeMatch: '/react/*' },
     ]
   },
+  { text: '项目', link: '/github.repo', activeMatch: '/github.repo/*' },
   {
     text: '归档',
     link: '/archive',

@@ -1,13 +1,11 @@
 ---
 title: 测试页面
-layout: page
+layout: home
 aside: false
 sidebar: false
 ---
-<script setup lang="ts">
-
-
+<script setup>
 
 </script>
 
-<!-- <ArchiveTimeline /> -->
+# 项目测试

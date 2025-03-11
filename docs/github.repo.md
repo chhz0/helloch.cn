@@ -5,13 +5,15 @@ aside: false
 sidebar: false
 ---
 <script setup lang="ts">
-  // import GithubRepoCard from "@/components/dev/GithubRepoCard.vue";
   import { ref } from "vue";
-  const repos = ref([
+  const golangRepos = ref([
     { owner: "chhz0", repoName: "goiam" },
-    { owner: "chhz0", repoName: "go-mall-kitex" },
-    { owner: "chhz0", repoName: "go-component-base" },
-    { owner: "chhz0", repoName: "caskv" }
+    { owner: "chhz0", repoName: "gojob" },
+    { owner: "chhz0", repoName: "framego" },
+    { owner: "chhz0", repoName: "go-bitcask" }
+  ]);
+  const vueRepos = ref([
+    { owner: "unovue", repoName: "shadcn-vue" },
   ]);
 </script>
 
@@ -37,19 +39,26 @@ sidebar: false
 ## golang
 <div class="repo-grid">
   <GithubRepoCard
-    v-for="repo in repos"
+    v-for="repo in golangRepos"
     :owner="repo.owner"
     :repo="repo.repoName" />
 </div>
 
 ## vue
 
-TODO
+<div class="repo-grid">
+  <GithubRepoCard
+    v-for="repo in vueRepos"
+    :owner="repo.owner"
+    :repo="repo.repoName" />
+</div>
 
-## java
+-- TODO
 
-TODO
+<!-- ## java -->
 
-## cangjie
+<!-- TODO -->
 
-TODO
+<!-- ## cangjie -->
+
+<!-- TODO -->

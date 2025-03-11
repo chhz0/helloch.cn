@@ -1,4 +1,5 @@
 import { EnhanceAppContext } from "vitepress";
+import { h } from 'vue';
 
 export default ({ app }: EnhanceAppContext) => {
   const globalComponents = import.meta.glob("./components/dev/*.vue",{

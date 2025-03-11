@@ -1,0 +1,14 @@
+.nav-item [data-svg-icon]::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    vertical-align: middle;
+    background-size: contain;
+}
+
+/* Golang 图标 */
+.nav-item [data-svg-icon="golang"]::before {
+    background-image: url('/svg/golang.svg');
+}

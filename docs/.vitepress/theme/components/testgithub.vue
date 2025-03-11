@@ -1,9 +1,21 @@
 <template>
-  <div class="github-card" @mouseover="hover = true" @mouseleave="hover = false">
+  <div
+    class="border rounded-lg p-4 transition-all duration-300 ease-in-out"
+    :class="[
+      'bg-white dark:bg-gray-900',
+      'border-gray-200 dark:border-gray-700',
+      'hover:shadow-lg hover:-translate-y-1'
+    ]"
+  >
     <!-- 加载状态 -->
-    <div v-if="loading" class="loading">Loading...</div>
+    <div v-if="loading" class="text-gray-500 dark:text-gray-400 p-4 text-center">
+      Loading...
+    </div>
+
     <!-- 错误状态 -->
-    <div v-else-if="error" class="error">Error: {{ error }}</div>
+    <div v-else-if="error" class="text-red-500 dark:text-red-400 p-4 text-center">
+      Error: {{ error }}
+    </div>
 
     <!-- 正常显示 -->
     <a
@@ -11,61 +23,54 @@
       :href="repoData.html_url"
       target="_blank"
       rel="noopener"
-      class="card-content"
+      class="flex gap-3 no-underline text-gray-800 dark:text-gray-200 hover:text-inherit"
     >
-      <!-- 左侧信息区 -->
-      <div class="repo-info">
-        <h3 class="repo-name">
-          <!-- <RepositoryIcon class="icon" /> -->
-          <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
-            <path :d="RepoIcon"
-              :fill="hover ? 'var(--vp-c-text-2)' : 'currentColor' "
-            />
+      <div class="flex-3 min-w-0">
+        <div class="flex items-baseline gap-3 mb-1">
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 16 16">
+            <path :d="RepoIcon" fill="currentColor" />
           </svg>
-          <div :style="{ color: getLanguageColor(repoData.language) }">
+          <h3 class="text-base font-medium truncate" :style="{ color: repoData.language ? getLanguageColor(repoData.language) : 'inherit' }">
             {{ owner }}/{{ repoData.name }}
-          </div>
-        </h3>
-        <p class="repo-description">{{ repoData.description || 'No description provided' }}</p>
-        <div class="repo-meta">
-          <span v-if="repoData.language" class="language">
+          </h3>
+        </div>
+
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2 h-[3.5em] overflow-hidden leading-snug">
+          {{ repoData.description || 'No description provided' }}
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center text-sm min-h-[24px]">
+          <span
+            v-if="repoData.language"
+            class="flex items-center gap-1 flex-shrink-0"
+            :style="{ color: getLanguageColor(repoData.language) }"
+          >
             <span
-              class="language-color"
+              class="w-3 h-3 rounded-full"
               :style="{ backgroundColor: getLanguageColor(repoData.language) }"
             />
             {{ repoData.language }}
           </span>
-          <span class="stars">
-            <!-- <StarIcon class="icon" /> -->
-            <svg class="icon" viewBox="0 0 16 16" width="16" height="16">
-              <path :d="StarIcon" :fill="'var(--vp-c-text-2)'"/>
+
+          <span class="flex items-center gap-1 text-gray-600 dark:text-gray-400">
+            <svg class="w-4 h-4" viewBox="0 0 16 16">
+              <path :d="StarIcon" fill="currentColor" />
             </svg>
             {{ formatNumber(repoData.stargazers_count) }}
           </span>
-          <span class="updated">
+
+          <span class="text-gray-500 dark:text-gray-400">
             Updated {{ formatDate(repoData.updated_at) }}
           </span>
         </div>
       </div>
-
-      <!-- 右侧统计区 -->
-      <!-- <div class="repo-stats">
-        <div class="stat-item">
-          <span class="stat-number">{{ formatNumber(repoData.forks_count) }}</span>
-          <span class="stat-label">Forks</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">{{ formatNumber(repoData.open_issues_count) }}</span>
-          <span class="stat-label">Issues</span>
-        </div>
-      </div> -->
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
-// 在模板中直接使用 SVG
+
 const RepoIcon = `M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z`
 const StarIcon = `M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 5.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z`
 
@@ -101,14 +106,12 @@ const props = defineProps({
 })
 
 const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN || ''
-const hover = ref(false)
 const loading = ref(false)
 const error = ref<string | null>(null)
 const repoData = ref<RepoData | null>(props.repoData || null)
 const cache = new Map<string, CachedRepoData>()
 const CACHE_TTL = 30 * 60 * 1000 // 30 分钟
 
-// 获取语言颜色（扩展了更多语言支持）
 const getLanguageColor = (language: string) => {
   const colors: Record<string, string> = {
     'JavaScript': '#f1e05a',
@@ -142,14 +145,12 @@ const formatDate = (dateString: string) => {
   })
 }
 
-// 获取仓库数据
 const fetchRepoData = async () => {
   if (import.meta.env.SSR) return
 
   loading.value = true
   error.value = null
   const cacheKey = `${props.owner}/${props.repo}`
-  // console.log('GithubToken:'+GITHUB_TOKEN);
 
   try {
     const cachedRepoData = cache.get(cacheKey)
@@ -177,22 +178,17 @@ const fetchRepoData = async () => {
 
     clearTimeout(timeoutId)
 
-    // TODO: 处理速率限制
-
     if (!response.ok) {
       const errorData = await response.json()
       throw new Error(errorData.message || 'Failed to fetch repository data')
     }
 
     const data = await response.json()
-    // 更新缓存
     cache.set(cacheKey, {
       data,
       timestamp: Date.now()
     })
-
     repoData.value = data
-
 
   } catch (err) {
     error.value = err instanceof Error
@@ -203,7 +199,6 @@ const fetchRepoData = async () => {
   }
 }
 
-// 自动清理过期缓存
 const cleanupCache = () => {
   const now = Date.now()
   for (const [key, item] of cache.entries()) {
@@ -213,10 +208,8 @@ const cleanupCache = () => {
   }
 }
 
-// 每10分钟执行一次清理
 setInterval(cleanupCache, 10 * 60 * 1000)
 
-// 监听prop变化
 watch(
   () => props.repoData,
   (newVal) => {
@@ -235,165 +228,3 @@ onMounted(() => {
   }
 })
 </script>
-
-<style scoped>
-.github-card {
-  padding: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  min-height: 120px;
-  position: relative;
-  overflow: hidden;
-}
-
-.github-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.card-content {
-  display: flex;
-  gap: 1rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.repo-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.repo-name {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  /* color: #0969da; */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.repo-name .icon {
-  flex-shrink: 0;
-}
-
-.repo-description {
-  margin: 0 0 0.75rem 0;
-  font-size: 0.875rem;
-  color: var(--vp-c-text-1);
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  height: 2.8em;
-}
-
-.repo-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.75rem;
-  color: #57606a;
-  flex-wrap: wrap;
-}
-
-/* 如果文字仍然有轻微偏移 */
-.repo-meta span {
-  line-height: 1;
-}
-
-
-.stars {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-/* 更精确控制图标位置 */
-.stars svg {
-  position: relative;
-  top: -0.05em; /* 微调图标位置 */
-}
-
-.language-color {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 0.25rem;
-  vertical-align: middle;
-}
-
-.repo-stats {
-  display: flex;
-  gap: 1.5rem;
-  padding-left: 1rem;
-  border-left: 1px solid #e1e4e8;
-  flex-shrink: 0;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 48px;
-}
-
-.stat-number {
-  font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.25;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  color: #57606a;
-}
-
-.icon {
-  color: #6a737d;
-  width: 16px;
-  height: 16px;
-  vertical-align: middle;
-  flex-shrink: 0;
-}
-
-.loading,
-.error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 120px;
-  padding: 1rem;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-.loading {
-  color: #57606a;
-}
-
-.error {
-  color: #cf222e;
-}
-
-@media (max-width: 480px) {
-  .card-content {
-    flex-direction: column;
-  }
-
-  .repo-stats {
-    border-left: none;
-    border-top: 1px solid #e1e4e8;
-    padding-left: 0;
-    padding-top: 1rem;
-    justify-content: space-around;
-  }
-}
-</style>
