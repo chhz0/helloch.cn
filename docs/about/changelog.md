@@ -3,7 +3,177 @@
 > [!NOTE] 
 > 日志记录由 [git_commit_2md.py](https://github.com/chhz0/helloch.cn/blob/blog/tools/git_commit_2md.py) 生成，其中部分内部md链接可能因为md文件的删除或者移动导致失效，推荐使用`Ctrl K`搜索文档. 
 
+## `2025-03-11`
+
+### Commit SHA: `9bb655f`
+
+**Message**: refactor(docs): 重构文档结构并优化主题样式
+
+- 重新整理文档目录结构，将算法、后端等分类调整到合适的位置
+- 删除未使用的 ArchiveTimeline 组件
+- 新增 TodoList 组件和多个测试组件
+- 更新 GithubRepoCard 组件样式
+- 引入 tailwindcss 并调整全局样式
+- 移除不必要的配置和导入
+- Added:
+  - [backend/algo/graph.md](/backend/algo/graph)
+  - [backend/algo/index.md](/backend/algo/)
+  - [backend/algo/linkedlist.md](/backend/algo/linkedlist)
+  - [backend/algo/queue.md](/backend/algo/queue)
+  - [backend/algo/stack.md](/backend/algo/stack)
+  - [backend/algo/tree.md](/backend/algo/tree)
+  - [backend/cangjie/basic-data-type.md](/backend/cangjie/basic-data-type)
+  - [backend/cangjie/func.md](/backend/cangjie/func)
+  - [backend/cangjie/index.md](/backend/cangjie/)
+  - [backend/docker/docker-compose.md](/backend/docker/docker-compose)
+  - [backend/docker/docker-deploy.md](/backend/docker/docker-deploy)
+  - [backend/docker/docker.md](/backend/docker/docker)
+  - [backend/docker/dockerfile-learn.md](/backend/docker/dockerfile-learn)
+  - [backend/docker/index.md](/backend/docker/)
+  - [backend/golang/grammar/index.md](/backend/golang/grammar/)
+  - [backend/golang/index.md](/backend/golang/)
+  - [backend/golang/principles/index.md](/backend/golang/principles/)
+  - [backend/mysql/index.md](/backend/mysql/)
+  - [backend/mysql/mysql-arch.md](/backend/mysql/mysql-arch)
+  - [backend/mysql/mysql-buffer-pool.md](/backend/mysql/mysql-buffer-pool)
+  - [backend/mysql/mysql-index.md](/backend/mysql/mysql-)
+  - [backend/mysql/mysql-lock.md](/backend/mysql/mysql-lock)
+  - [backend/mysql/mysql-log.md](/backend/mysql/mysql-log)
+  - [backend/mysql/mysql-transaction.md](/backend/mysql/mysql-transaction)
+  - [backend/redis/arch/LRU-LFU.md](/backend/redis/arch/LRU-LFU)
+  - [backend/redis/arch/index.md](/backend/redis/arch/)
+  - [backend/redis/arch/multi-thread-persistence.md](/backend/redis/arch/multi-thread-persistence)
+  - [backend/redis/arch/redisDb.md](/backend/redis/arch/redisDb)
+  - [backend/redis/arch/single-thread.md](/backend/redis/arch/single-thread)
+  - [backend/redis/data-types/Hashes.md](/backend/redis/data-types/Hashes)
+  - [backend/redis/data-types/Lists.md](/backend/redis/data-types/Lists)
+  - [backend/redis/data-types/Sets.md](/backend/redis/data-types/Sets)
+  - [backend/redis/data-types/Stream.md](/backend/redis/data-types/Stream)
+  - [backend/redis/data-types/Strings.md](/backend/redis/data-types/Strings)
+  - [backend/redis/data-types/ZSet.md](/backend/redis/data-types/ZSet)
+  - [backend/redis/data-types/chhz0.md](/backend/redis/data-types/chhz0)
+  - [backend/redis/data-types/encoding-hashtable.md](/backend/redis/data-types/encoding-hashtable)
+  - [backend/redis/data-types/encoding-sds.md](/backend/redis/data-types/encoding-sds)
+  - [backend/redis/data-types/encoding-skip-list.md](/backend/redis/data-types/encoding-skip-list)
+  - [backend/redis/data-types/encoding-zip-list.md](/backend/redis/data-types/encoding-zip-list)
+  - [backend/redis/data-types/index.md](/backend/redis/data-types/)
+  - [backend/redis/index.md](/backend/redis/)
+  - [backend/redis/interview/index.md](/backend/redis/interview/)
+  - [backend/rust/index.md](/backend/rust/)
+  - [frontend/vitepress/api-examples.md](/frontend/vitepress/api-examples)
+  - [frontend/vitepress/index.md](/frontend/vitepress/)
+  - [frontend/vitepress/markdown-examples.md](/frontend/vitepress/markdown-examples)
+  - [frontend/vitepress/template-frontmatter.md](/frontend/vitepress/template-frontmatter)
+- Modified:
+  - [github.repo.md](/github.repo)
+  - [test.md](/test)
+- Deleted:
+  - [algo/graph.md](/algo/graph)
+  - [algo/index.md](/algo/)
+  - [algo/linkedlist.md](/algo/linkedlist)
+  - [algo/queue.md](/algo/queue)
+  - [algo/stack.md](/algo/stack)
+  - [algo/tree.md](/algo/tree)
+  - [cangjie/basic-data-type.md](/cangjie/basic-data-type)
+  - [cangjie/func.md](/cangjie/func)
+  - [cangjie/index.md](/cangjie/)
+  - [docker/docker-compose.md](/docker/docker-compose)
+  - [docker/docker-deploy.md](/docker/docker-deploy)
+  - [docker/docker.md](/docker/docker)
+  - [docker/dockerfile-learn.md](/docker/dockerfile-learn)
+  - [docker/index.md](/docker/)
+  - [golang/grammar/index.md](/golang/grammar/)
+  - [golang/index.md](/golang/)
+  - [golang/principles/index.md](/golang/principles/)
+  - [mysql/index.md](/mysql/)
+  - [mysql/mysql-arch.md](/mysql/mysql-arch)
+  - [mysql/mysql-buffer-pool.md](/mysql/mysql-buffer-pool)
+  - [mysql/mysql-index.md](/mysql/mysql-)
+  - [mysql/mysql-lock.md](/mysql/mysql-lock)
+  - [mysql/mysql-log.md](/mysql/mysql-log)
+  - [mysql/mysql-transaction.md](/mysql/mysql-transaction)
+  - [redis/arch/LRU-LFU.md](/redis/arch/LRU-LFU)
+  - [redis/arch/index.md](/redis/arch/)
+  - [redis/arch/multi-thread-persistence.md](/redis/arch/multi-thread-persistence)
+  - [redis/arch/redisDb.md](/redis/arch/redisDb)
+  - [redis/arch/single-thread.md](/redis/arch/single-thread)
+  - [redis/data-types/Hashes.md](/redis/data-types/Hashes)
+  - [redis/data-types/Lists.md](/redis/data-types/Lists)
+  - [redis/data-types/Sets.md](/redis/data-types/Sets)
+  - [redis/data-types/Stream.md](/redis/data-types/Stream)
+  - [redis/data-types/Strings.md](/redis/data-types/Strings)
+  - [redis/data-types/ZSet.md](/redis/data-types/ZSet)
+  - [redis/data-types/chhz0.md](/redis/data-types/chhz0)
+  - [redis/data-types/encoding-hashtable.md](/redis/data-types/encoding-hashtable)
+  - [redis/data-types/encoding-sds.md](/redis/data-types/encoding-sds)
+  - [redis/data-types/encoding-skip-list.md](/redis/data-types/encoding-skip-list)
+  - [redis/data-types/encoding-zip-list.md](/redis/data-types/encoding-zip-list)
+  - [redis/data-types/index.md](/redis/data-types/)
+  - [redis/index.md](/redis/)
+  - [redis/interview/index.md](/redis/interview/)
+  - [rust/index.md](/rust/)
+  - [vitepress/api-examples.md](/vitepress/api-examples)
+  - [vitepress/index.md](/vitepress/)
+  - [vitepress/markdown-examples.md](/vitepress/markdown-examples)
+  - [vitepress/template-frontmatter.md](/vitepress/template-frontmatter)
+  - [guide/index.md](/guide/)
+
+## `2025-03-08`
+
+### Commit SHA: `b1708bf`
+
+**Message**: docs(README): 更新项目说明和链接
+- Modified:
+  - [README.md](/README)
+
+### Commit SHA: `f3fb510`
+
+**Message**: test: github action
+- Modified:
+  - [test.md](/test)
+
+### Commit SHA: `36d0e7c`
+
+**Message**: chore: update
+- Modified:
+  - [github.repo.md](/github.repo)
+  - [golang/index.md](/golang/)
+  - [test.md](/test)
+
+## `2025-02-18`
+
+### Commit SHA: `7e904b7`
+
+**Message**: docs: 重构文档结构并优化主题配置
+
+- 将配置文件和自定义组件移至 theme 目录
+- 新增自动侧边栏功能
+- 更新导航栏和侧边栏配置
+- 优化 Algolia 搜索配置
+- 调整文档样式和布局
+- 新增项目仓库页面
+- 更新首页内容
+- Added:
+  - [github.repo.md](/github.repo)
+  - [test.md](/test)
+  - [vitepress/template-frontmatter.md](/vitepress/template-frontmatter)
+- Modified:
+  - [index.md](/)
+  - [redis/data-types/Strings.md](/redis/data-types/Strings)
+- Deleted:
+  - [template-readme.md](/template-readme)
+
 ## `2025-02-10`
+
+### Commit SHA: `2f719f8`
+
+**Message**: chore: 删除虚拟环境文件和配置
+
+### Commit SHA: `f8870a1`
+
+**Message**: feat: 新增python虚拟环境&修改makefile
+- Modified:
+  - [about/changelog.md](/about/changelog)
 
 ### Commit SHA: `72a9010`
 
