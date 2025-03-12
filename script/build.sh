@@ -1,3 +1,3 @@
-git pull origin blog
+git pull origin vitepress
 
 npm run docs:build

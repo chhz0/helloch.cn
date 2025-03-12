@@ -29,11 +29,15 @@
         <p class="repo-description">{{ repoData.description || 'No description provided' }}</p>
         <div class="repo-meta">
           <span v-if="repoData.language" class="language">
-            <span
+            <!-- <span
               class="language-color"
               :style="{ backgroundColor: getLanguageColor(repoData.language) }"
+            /> -->
+            <img
+              class="language"
+              :src="getLanguageIcon(repoData.language)"
             />
-            {{ repoData.language }}
+            <!-- {{ repoData.language }} -->
           </span>
           <span class="stars">
             <!-- <StarIcon class="icon" /> -->
@@ -118,12 +122,25 @@ const getLanguageColor = (language: string) => {
     'Vue': '#41b883',
     'CSS': '#563d7c',
     'HTML': '#e34c26',
-    'PHP': '#4F5D95',
     'Ruby': '#701516',
     'Go': '#00ADD8',
     'Rust': '#dea584'
   }
-  return colors[language] || '#cccccc'
+  return colors[language] || '#ff5733'
+}
+
+const getLanguageIcon = (language: string) => {
+  const icons: Record<string, string> = {
+    'JavaScript': '/svg/javascript.svg',
+    'TypeScript': '/svg/typescript.svg',
+    'Python': '/svg/python.svg',
+    'Java': '/svg/java.svg',
+    'Vue': '/svg/vue.svg',
+    'CSS': '/svg/css.svg',
+    'HTML': '/svg/html.svg',
+    'Go': '/svg/golang.svg'
+  }
+  return icons[language] || '/svg/code.svg'
 }
 
 const formatNumber = (num: number) => {
@@ -325,6 +342,15 @@ onMounted(() => {
   display: inline-block;
   width: 12px;
   height: 12px;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+.language {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   margin-right: 0.25rem;
   vertical-align: middle;

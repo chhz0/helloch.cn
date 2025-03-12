@@ -9,3 +9,4 @@ sidebar: false
 </script>
 
 # 项目测试
+<GoLearningPath />
