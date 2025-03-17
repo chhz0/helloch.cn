@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '数据类型 - Sets'
-  link: 'redis/data-types/Sets'
+  text: 'Redis - Sets'
+  link: '/backend/redis/data-types/Sets'
 next:
-  text: '数据类型 - ZSet'
-  link: '/redis/data-types/ZSet'
+  text: 'Redis - ZSet'
+  link: '/backend/redis/data-types/ZSet'
 ---
-# Hash <Badge type="tip" text="Redis Hash" />
+## Redis< Hash > <Badge type="tip" text="Redis Hash" />
 
 Redis Hash 是结构化为字段值(field)->值(value)集合的记录类型. 可以使用`Hash`来表示基础对象并存储计数器分组.
 
@@ -15,7 +15,7 @@ Redis Hash 是结构化为字段值(field)->值(value)集合的记录类型. 可
 
 `Hash`可以很方便的表示对象
 
-## Hash 命令
+### Hash 命令
 
 Hash常用命令：
 
@@ -32,7 +32,7 @@ Hash常用命令：
 - 删除：`DEL`
   - `DEL key [key ...]` # 删除Hash对象
 
-## Hash 编码(底层实现)
+### Hash 编码(底层实现)
 
 Hash底层有两个编码方式：`ZIPLIST`, `HASHTABLE`
 
@@ -45,4 +45,4 @@ Hash底层有两个编码方式：`ZIPLIST`, `HASHTABLE`
 如果Hash的底层编码为`HASHTABLE`时，与上面的Set（无序列表）使用HASHTABLE，区别在于在Set中Value始终为null，但是在Hash中，具有对应的值.
 
 > [!NOTE] 编码详解
-> 🔗 [查看HASHTABLE编码](./encoding-hashtable.md)
+> 🔗 [查看HASHTABLE编码](./encoding/hashtable.md)

@@ -1,9 +1,15 @@
 ---
-next:
-  text: 'Redis 数据类型'
-  link: '/redis/data-types'
+title: just Redis
+navbar: true
+aside: true
 ---
-# Redis 初识 <Badge type="tip" text="Redis" />
+<h1 style="color:var(--vp-c-text-1)">Redis</h1>
+
+[[toc]]
+
+---
+
+# Redis 简介 <Badge type="tip" text="Redis" />
 
 Redis是一个内存数据库、一个Key/Value存储系统，支持多种数据结构，包括字符串、哈希、列表、集合、有序集合等。
 
@@ -16,3 +22,25 @@ Redis是一个内存数据库、一个Key/Value存储系统，支持多种数据
 - [小林coding/图解Redis](https://xiaolincoding.com/redis/)
 - [Redis中文网](https://www.redis.net.cn/)
 :::
+
+---
+
+<!--@include: ./data-types/index.md-->
+<!--@include: ./data-types/String.md-->
+<!--@include: ./data-types/List.md-->
+<!--@include: ./data-types/Set.md-->
+<!--@include: ./data-types/Hash.md-->
+<!--@include: ./data-types/ZSet.md-->
+<!--@include: ./data-types/Stream.md-->
+<!--@include: ./data-types/encoding/sds.md-->
+<!--@include: ./data-types/encoding/ziplist.md-->
+<!--@include: ./data-types/encoding/hashtable.md-->
+<!--@include: ./data-types/encoding/skiplist.md-->
+
+---
+
+<!--@include:./arch/index.md-->
+<!--@include:./arch/redisDB.md-->
+<!--@include:./arch/single-thread.md-->
+<!--@include:./arch/multi-thread.md-->
+<!--@include:./arch/LRU-LFU.md-->

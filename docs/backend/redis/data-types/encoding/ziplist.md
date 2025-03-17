@@ -1,18 +1,18 @@
 ---
 prev:
-  text: '编码 - SDS'
-  link: 'redis/data-types/encoding-sds'
+  text: 'encoding - SDS'
+  link: '/backend/redis/data-types/encoding-sds'
 next:
-  text: '编码 - HASHTABLE'
-  link: '/redis/data-types/encoding-hashtable'
+  text: 'encoding - HASHTABLE'
+  link: '/backend/redis/data-types/encoding-hashtable'
 ---
-# ZIPLIST <Badge type="tip" text="Redis Encoding ZIPLIST" />
+## Redis< enc-ZipList > <Badge type="tip" text="Redis Encoding ZipList" />
 
 `ZIPLIST`压缩列表，是排列紧凑的列表，为Redis供紧凑型的数据存储方式，能节约内存（节省链表指针的开销），数据量小的时候遍历访问性能好（连续+缓存命中率友好）
 
 关于`LISTPACK`是Redis 5.0引入，Redis 7.0完全替代`ZIPLIST`.
 
-## ZIPLSIT 整体结构
+### ZIPLSIT 整体结构
 
 ```text{3}
 // redis代码注释，描述了ZIPLIST的结构
@@ -46,7 +46,7 @@ next:
 
 - `entry-data`: 实际的数据
 
-## ZIPLIST 查询数据
+### ZIPLIST 查询数据
 
 - 获取节点数量
 `ZIPLIST`可以在O(1)时间复杂度返回节点数量，因为其header定义了记录节点数量的`zllen`，但是`zllen`仅占2字节长度，最大记录**65534**，当节点数量超过65535时，就需要通过遍历节点获取节点数量.
@@ -57,7 +57,7 @@ next:
 
 在`ZIPLIST`中查询指定数据的节点，需要遍历压缩列表，平均时间复杂度为O(N)
 
-## ZIPLIST 更新数据
+### ZIPLIST 更新数据
 
 `ZIPLIST`的更新就是增加、删除数据，ZIPLIST提供头尾增减的能力，平均时间复杂度O(N)，因为在头部增加一个节点会导致后面节点都往后移动，所以更新平均时间复杂度O(N).
 
@@ -67,7 +67,7 @@ next:
 
 尽管连锁更新可能导致性能问题，但实际上这种情况发生的概率较低。因为要发生连锁更新，需要ZipList中有连续多个长度刚好为250到253字节的节点，这种情况在实际应用中并不常见.
 
-## LISTPACK 优化
+### LISTPACK 优化
 
 `LISTPACK`是为了解决`ZIPLIST`最大的痛点——连锁更新
 

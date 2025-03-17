@@ -4,39 +4,18 @@ import { text } from 'stream/consumers'
 import { DefaultTheme } from 'vitepress'
 
 const navConfig: DefaultTheme.NavItem[] = [
-  // {
-  //   text: 'API Reference',
-  //   items: [
-  //     {
-  //       text: 'Example',
-  //       link: '/home.html'
-  //     },
-  //     {
-  //       component: 'ApiPreference',
-  //       props: {
-  //         options: ['Options', 'Composition'],
-  //         defaultOption: 'Composition',
-  //       }
-  //     }
-  //   ]
-  // },
-
   {
     text: '后端',
-    link: 'backend',
+    activeMatch: '/backend/*',
     items: [
       { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
       { text: 'Network', link: '/network', activeMatch: '/network/*' },
       {
         text: 'langs',
         items: [
-          {
-            text: 'Golang ',
-            link: '/golang',
-            activeMatch: '/golang/*',
-          },
-          { text: 'Java ☕', link: '/java', activeMatch: '/java/*' },
-          // { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
+          {  text: 'Golang ', link: '/backend/golang', activeMatch: '/golang/*' },
+          { text: 'Java ', link: '/backend/java', activeMatch: '/java/*' },
+          // { text: 'Cangjie', link: '/cangjie', activeMatch: '/cangjie/*' },
           // { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
           // { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
         ]
@@ -44,8 +23,8 @@ const navConfig: DefaultTheme.NavItem[] = [
       {
         text: 'database',
         items: [
-          { text: 'MySQL ✨', link: '/mysql', activeMatch: '/mysql/*' },
-          { text: 'Redis ✨', link: '/redis', activeMatch: '/redis/*' },
+          { text: 'MySQL', link: '/backend/mysql', activeMatch: '/mysql/*' },
+          { text: 'Redis', link: '/backend/redis', activeMatch: '/redis/*' },
           // { text: 'MongoDB', link: '/mongodb', activeMatch: '/mongodb/*' },
           // { text: "MariaDB", link: '/mariadb', activeMatch: '/mariadb/*' }
         ]
@@ -53,14 +32,14 @@ const navConfig: DefaultTheme.NavItem[] = [
       { text: 'message queue',
         items: [
           // { text: 'RabbitMQ', link: '/middleware/rabbitmq', activeMatch: '/middleware/rabbitmq/*' },
-          { text: 'Kafka ✨', link: '/middleware/kafka', activeMatch: '/middleware/kafka/*' },
+          { text: 'Kafka', link: '/middleware/kafka', activeMatch: '/middleware/kafka/*' },
           // { text: 'NATS', link: '/middleware/nats', activeMatch: '/middleware/nats/*' },
           // { text: 'RocketMQ', link: '/middleware/rocketmq', activeMatch: '/middleware/rocketmq/*' },
           // { text: 'Pulsar', link: '/middleware/pulsar', activeMatch: '/middleware/pulsar/*' },
         ]
       },
-      { text: 'Git ✨', link: '/middleware/git', activeMatch: '/middleware/git/*'  },
-      { text: 'Docker ✨', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
+      { text: 'Git', link: '/middleware/git', activeMatch: '/middleware/git/*'  },
+      { text: 'Docker', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
       // { text: 'http代理',
       //   items: [
         //     { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
@@ -76,7 +55,6 @@ const navConfig: DefaultTheme.NavItem[] = [
       { text: 'React', link: '/react', activeMatch: '/react/*' },
     ]
   },
-  { text: '项目', link: '/github.repo', activeMatch: '/github.repo/*' },
   {
     text: '归档',
     link: '/archive',

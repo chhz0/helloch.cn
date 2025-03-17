@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '数据类型 - Stream'
-  link: 'redis/data-types/Stream'
+  text: 'Redis - Stream'
+  link: '/backend/redis/data-types/Stream'
 next:
-  text: '编码 - ZIPLIST'
-  link: '/redis/data-types/encoding-zip-list'
+  text: 'encoding - ZIPLIST'
+  link: '/backend/redis/data-types/encoding/ziplist'
 ---
-# SDS <Badge type="tip" text="Redis Encoding SDS" />
+## Redis< enc-SDS > <Badge type="tip" text="Redis Encoding SDS" />
 
 sds(Simple Synamic String)，简单动态字符串，是redis内部作为基石的字符串封装（很重要）
 

@@ -1,4 +1,4 @@
-# Redis 多线程持久化 <Badge type="tip" text="Redis Multi Thread Persistence" />
+## Redis 多线程持久化 <Badge type="tip" text="Redis Multi Thread Persistence" />
 
 Redis多线程模型
 

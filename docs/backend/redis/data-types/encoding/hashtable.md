@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '编码 - ZIPLIST'
-  link: 'redis/data-types/encoding-zip-list'
+  text: 'encoding - ZIPLIST'
+  link: '/backend/redis/data-types/encoding/ziplist'
 next:
   text: '编码 - SKIPLIST'
-  link: '/redis/data-types/encoding-skip-list'
+  link: '/backend/redis/data-types/encoding/skiplist'
 ---
-# HashTable <Badge type="tip" text="Redis Encoding HASHTABLE" />
+## Redis< enc-HashTable > <Badge type="tip" text="Redis Encoding HASHTABLE" />
 
 `HASHTABLE`可以使用O(1)时间复杂度能够快速找到`field`对应的`value`，简单理解，`HASHTABLE`是一个目录，可以帮助我们快速找到需要内容
 
@@ -45,9 +45,9 @@ typedef struct dictEntry {
 
 ![redis-encodng-hashtable-struct](/redis/redis-encoding-hashtable-struct.drawio.svg)
 
-## Hash 渐进式扩容/缩容
+### Hash 渐进式扩容/缩容
 
-### 扩容
+#### 扩容
 渐进式扩容就是一点一点扩大`HASHTABLE`的容量，默认值为4 (#define DICT_HT_INTTIAL_SIZE 4)
 为了实现渐进式扩容，Redis没有直接把dictht暴露给上层，而是再封装了一层
 
@@ -75,7 +75,7 @@ typedef struct dict {
 小总结：渐进式扩容的核心是操作时顺带迁移
 :::
 
-### 扩容时机
+#### 扩容时机
 redis提出一个负载因子的概念，负载因子表示目前Redis HASHTABLE的负载情况
 
 用k表示负载因子：`k=ht[0].used/ht[0].size`，也就是使用空间和总空间大小的比例，redis会根据负载因子的情况来扩容：
@@ -83,7 +83,7 @@ redis提出一个负载因子的概念，负载因子表示目前Redis HASHTABLE
 1. 负载因子 **k大于1** 时，说明此时空间非常紧张，新数据在链表上叠加，越来越多的数据导致查询无法在O(1)时间复杂度找到，还要遍历链表，如果此时服务器没有执行BGSAVE或BGREWRITEAOF两个命令，就会发生扩容。
 2. 负载因子 **k大于5** 时，说明HASHTABLE已经不堪重负，此时即使有复制命令在，也要进行扩容
 
-### 缩容
+#### 缩容
 当有了多余的空间，如果不释放，就会导致多余的空间被浪费
 
 缩容过程和扩容是相似的，也是渐进式缩容，同样缩容时机也是用负载因子来控制的

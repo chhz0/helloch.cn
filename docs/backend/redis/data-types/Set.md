@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '数据类型 - List'
-  link: 'redis/data-types/Lists'
+  text: 'Redis - List'
+  link: '/backend/redis/data-types/List'
 next:
-  text: '数据类型 - Hash'
-  link: '/redis/data-types/Hashes'
+  text: 'Redis - Hash'
+  link: '/backend/redis/data-types/Hash'
 ---
-# Sets <Badge type="tip" text="Redis Set" />
+## Redis< Set > <Badge type="tip" text="Redis Set" />
 
 Redis Set是一个唯一字符串的集合
 
@@ -17,7 +17,7 @@ Redis Set是一个唯一字符串的集合
 
 > Redis Set的最大大小为2^32-1(4294967295)
 
-## Set 命令
+### Set 命令
 
 Set的基本操作有：
 - 创建：`SADD`
@@ -37,10 +37,10 @@ Set的基本操作有：
   - `DEL key` 删除元素
 
 ::: tip 详细Set命令
-🔗 [Sets命令列表](https://redis.io/docs/latest/commands/?group=set)
+🔗 [Set命令列表](https://redis.io/docs/latest/commands/?group=set)
 :::
 
-## Set 编码(底层实现)
+### Set 编码(底层实现)
 
 Redis Set的底层编码是: `INTSET`, `HASHTABLE`
 
@@ -60,4 +60,4 @@ Set 使用`HASHTABLE`编码时，只存储键，不存储值，因而其key永�
 ![redis-encoding-hashtable](/redis/redis-encoding-hashtable.drawio.svg)
 
 > [!NOTE] 编码详解
-> 🔗 [查看HASHTABLE编码](./encoding-hashtable.md)
+> 🔗 [查看HASHTABLE编码](./encoding/hashtable.md)

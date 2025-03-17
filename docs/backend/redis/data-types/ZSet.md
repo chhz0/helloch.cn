@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '数据类型 - Hash'
-  link: 'redis/data-types/Hashes'
+  text: 'Redis - Hash'
+  link: '/backend/redis/data-types/Hashes'
 next:
-  text: '数据类型 - Stream'
-  link: '/redis/data-types/Stream'
+  text: 'Redis - Stream'
+  link: '/backend/redis/data-types/Stream'
 ---
-# ZSet <Badge type="tip" text="Redis Sorted Set" />
+## Redis< ZSet > <Badge type="tip" text="Redis Sorted Set" />
 
 Redis ZSet 是一个关联分数排序的唯一字符串集合. 当多个字符串具有相同分数时，字符串会按照字典顺序排列。
 
@@ -20,7 +20,7 @@ Redis ZSet 是一个关联分数排序的唯一字符串集合. 当多个字符�
 1. 如果 B 和 A 是具有不同分数的两个元素，则如果 A.score 是 > B.score，则 A > B.
 2. 如果 B 和 A 的分数完全相同，则如果 A 字符串按字典顺序大于 B 字符串，则 A > B。 B 和 A 字符串不能相等，因为排序集仅具有唯一元素
 
-## ZSet 命令
+### ZSet 命令
 
 ZSet常见命令：
 - 创建：`ZADD`
@@ -41,7 +41,7 @@ ZSet常见命令：
 🔗 [ZSets命令列表](https://redis.io/docs/latest/commands/?group=sorted-set)
 :::
 
-## ZSet 编码(底层实现)
+### ZSet 编码(底层实现)
 
 ZSet底层编码有两种：`ZIPLIST`， `SKIPLIST`+`HASHTABLE`
 
@@ -54,4 +54,4 @@ ZSet底层编码有两种：`ZIPLIST`， `SKIPLIST`+`HASHTABLE`
 SKIPLIST是一种可以快速查找的多级链表结构，通过SKIPLIST可以快速定位到数据所在，它的排名操作、范围查询性能都很高
 
 > [!NOTE] 编码详解
-> 🔗 [查看SKIPLIST编码](./encoding-skip-list)
+> 🔗 [查看SKIPLIST编码](./encoding/ziplist.md)

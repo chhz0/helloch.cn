@@ -1,26 +1,26 @@
 ---
 prev:
-  text: 'Redis 数据类型'
-  link: 'redis/data-types'
+  text: 'Redis 数据结构'
+  link: '/backend/redis/data-types'
 next:
-  text: '数据类型 - List'
-  link: '/redis/data-types/Lists'
+  text: 'Redis - List'
+  link: '/backend/redis/data-types/List'
 ---
-# Strings  <Badge type="tip" text="Redis Strings" />
+## Redis< String >  <Badge type="tip" text="Redis String" />
 
-Redis String 类型，存储字节，包括文本，序列化对象和二进制数组，因此 ***String是Redis最基本的数据类型*** 。通常用于**缓存**，而且Redis支持其他功能，允许实现**计数器**并执行按位运算.
+Redis String 类型，存储字节，包括文本，序列化对象和二进制数组，因此 ***String是Redis最基本的数据结构*** 。通常用于**缓存**，而且Redis支持其他功能，允许实现**计数器**并执行按位运算.
 
-由于Redis中key是一个字符串，因此Redis使用String数据类型作为key的值.
+由于Redis中key是一个字符串，因此Redis使用String数据结构作为key的值.
 
 在默认情况下，Stirng最大为512MB，可以通过配置项`proto-max-bulk-len`进行修改.
 
-## Strings 适用场景
+### String 适用场景
 使用场景：一般用来存放字节数据、文本数据、序列化后的对象数据.
 
 1. 缓存场景：Value存Json字符串等信息.
-2. 计数场景：因为Redis处理命令是单线程，所以执行命令的过程是原子的，因此String数据类型适合计数场景.
+2. 计数场景：因为Redis处理命令是单线程，所以执行命令的过程是原子的，因此String数据结构适合计数场景.
 
-## Strings 命令
+### String 命令
 
 常用命令:
 - 创建 --> `set`, `setnx`, `getset`
@@ -42,15 +42,15 @@ Redis String 类型，存储字节，包括文本，序列化对象和二进制�
 - `INCRBY key increment` # 以原子方式将给定键中存储的计数器加上指定的增量值
 - `INCRBYFLOAT key increment` # 以原子方式将给定键中存储的计数器加上指定的浮点数增量值
 
-::: info 🔗 [Strings命令列表](https://redis.io/docs/latest/commands/?group=Strings)
+::: info 🔗 [String命令列表](https://redis.io/docs/latest/commands/?group=String)
 :::
 
 
-## Strings 编码(底层实现)
+### String 编码(底层实现)
 
-Redis String类型，底层实现是使用C语言的`SDS`字符串类型，sds类型是Redis自己实现的一种动态字符串类型，它比C语言的`Strings`类型多了一个指针，指向字符串的结尾，方便在字符串末尾追加数据。
+Redis String类型，底层实现是使用C语言的`SDS`字符串类型，sds类型是Redis自己实现的一种动态字符串类型，它比C语言的`String`类型多了一个指针，指向字符串的结尾，方便在字符串末尾追加数据。
 
-- Strings的三种编码方式:
+- String的三种编码方式:
   - `INT`: 存放整形，可以用long表示的整数以该编码存储；
   - `EMBSTR`: 如果字符串 <= 阈值字节(redis.version > 3.2 ? 44 : 39)，使用EMBSTR编码
   - `RAW`: 字符串大于 > 阈值字节(redis.version > 3.2 ? 44 : 39)，使用RAW编码
@@ -103,4 +103,4 @@ EMBSTR的优缺点：
 2. EMBSTR -> RAW: 任何写操作之后EMBSTR都会变成RAW
 
 > [!NOTE] SDS解释
-> 🔗 [查看SDS](./encoding-sds.md)
+> 🔗 [查看SDS](./encoding/sds.md)

@@ -61,62 +61,6 @@ hero:
 
 <TodoList :todos="todos" />
 
-<TodoKuai :todos="[
-  {
-    text: 'Redis',
-    done: false,
-    children: [
-      { text: '数据结构', done: true,
-        children: [
-          { text:'string', done: true },
-          { text:'list', done: true },
-          { text:'set', done: true },
-          { text:'zset', done: true },
-          { text:'hashtable', done: true },
-          { text: '编码', done: true,
-            children: [
-              { text: 'embstr', done: true },
-              { text: 'ziplist', done: true },
-              { text: 'hashtable', done: true },
-              { text: 'skiplist', done: true },
-            ]
-          },
-        ]
-      },
-      { text: '架构', done: false },
-      { text: '持久化', done: false },
-      { text: '应用场景', done: false },
-    ]
-  },
-  { text: 'Mysql', done: false,
-    children: [
-      { text: 'innodb', done: false,
-        children: [
-          { text: '索引', done: false },
-          { text: '事务', done: false },
-          { text: '锁', done: false },
-          { text: '内存', done: false },
-          { text: '日志', done: false },
-          { text: '逻辑架构', done: false },
-        ]
-      },
-    ]
-  },
-  { text: 'golang', done: false,
-    children: [
-      { text: '基础', done: true },
-      { text: '原理', done: true },
-      { text: '实践', done: true },
-    ]
-  },
-  { text: '更新文档说明', done: false },
-  { text: 'linux', done: false },
-  { text: 'network', done: false },
-  { text: 'algo', done: false },
-  { text: 'docker', done: false },
-  { text: 'git', done: false },
-]" />
-
 ## 更新日志 <Badge type="tip" text="Log" />
 
 ::: tip
@@ -142,24 +86,26 @@ const todos = [
     text: 'Redis',
     done: false,
     expanded: false,
-    link: './backend/redis',
+    link: '/backend/redis',
     children: [
       {
         id: '1-1',
         text: '数据结构',
         done: true,
+        link: '/backend/redis/#redis-数据结构',
         children: [
-          { id: '1-1-1', text: 'string', done: true },
-          { id: '1-1-2', text: 'list', done: true },
-          { id: '1-1-3', text: 'set', done: true },
-          { id: '1-1-4', text:'zset', done: true },
-          { id: '1-1-5', text:'hashtable', done: true },
+          { id: '1-1-1', text: 'string', done: true, link: '/backend/redis/#redis-string' },
+          { id: '1-1-2', text: 'list', done: true, link: '/backend/redis/#redis-list' },
+          { id: '1-1-3', text: 'set', done: true, link: '/backend/redis/#redis-set' },
+          { id: '1-1-4', text:'hash', done: true, link: '/backend/redis/#redis-hash' },
+          { id: '1-1-5', text:'zset', done: true, link: '/backend/redis/#redis-zset' },
+          { id: '1-1-6', text:'stream && other', done: true, link: '/backend/redis/#redis-stream' },
           { id: '1-1-6', text: '编码', done: true,
             children: [
-              { id: '1-1-6-1', text: 'embstr', done: true },
-              { id: '1-1-6-2', text: 'ziplist', done: true },
-              { id: '1-1-6-3', text: 'hashtable', done: true },
-              { id: '1-1-6-4', text:'skiplist', done: true },
+              { id: '1-1-6-1', text: 'sds', done: true, link: '/backend/redis/#redis-enc-sds' },
+              { id: '1-1-6-2', text: 'ziplist', done: true, link: '/backend/redis/#redis-enc-ziplist' },
+              { id: '1-1-6-3', text: 'hashtable', done: true, link: '/backend/redis/#redis-enc-hashtable' },
+              { id: '1-1-6-4', text:'skiplist', done: true, link: '/backend/redis/#redis-enc-skiplist' },
             ]
           }
         ]

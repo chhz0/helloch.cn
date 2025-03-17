@@ -1,12 +1,12 @@
 ---
 prev:
   text: 'Redis - 架构'
-  link: '/redis/arch'
+  link: '/backend/redis/arch'
 next:
   text: '架构 - 单线程模型'
-  link: 'redis/arch/single-thread'
+  link: '/backend/redis/arch/single-thread'
 ---
-# Redis 数据库结构 <Badge type="tip" text="Redis redisDb" />
+## Redis 数据库结构 <Badge type="tip" text="Redis redisDb" />
 
 Redis是一个基于内存的数据库，数据存储在内存中，以键值对的形式存储.
 
@@ -40,14 +40,14 @@ typedef struct dict {
 
 ![redis-redisDb-struct](/redis/redis-redisDb-struct.drawio.svg)
 
-## 操作Redis在内存中的表现
+### 操作Redis在内存中的表现
 
 - `添加数据` # 即添加键值对，添加到dict结构字典中，Key必须为String对象，value为任何类型的对象，添加数据后，会在redisDb里字段dict上添加dict对象
 - `查询数据` # 直接在dict找到对应的key，即完成查询
 - `更新数据` # 对已经Key对象的任何变更操作，都是更新
 - `删除数据` # 删除即把key和value从dict结构里删除
 
-## 关于过期键 expiresKey
+### 关于过期键 expiresKey
 
 Redis可以设置过期键，到达一定时间，这些对象会被自动过期并回收
 

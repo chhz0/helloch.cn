@@ -1,12 +1,12 @@
 ---
 prev:
-  text: '数据类型 - String'
-  link: 'redis/data-types/Strings'
+  text: 'Redis - String'
+  link: '/backend/redis/data-types/String'
 next:
-  text: '数据类型 - Sets'
-  link: '/redis/data-types/Sets'
+  text: 'Redis - Sets'
+  link: '/backend/redis/data-types/Set'
 ---
-# Lists <Badge type="tip" text="Redis List" />
+## Redis< List > <Badge type="tip" text="Redis List" />
 
 Redis List是一组连续的字符串值**链表**，这意味着向List的头部或者尾部中添加新元素的操作会在恒定的时间内完成，
 无论其已经存储了多少元素，但是缺点是访问元素的操作则需要遍历List，时间复杂度为O(N)
@@ -15,7 +15,7 @@ Redis List经常用于:
 - 实现堆栈和队列
 - 为后台系统构建队列管理
 
-## Lists 命令
+### List 命令
 
 常用命令:
 - 创建 --> `LPUSH`, `RPUSH`
@@ -43,10 +43,10 @@ List还支持多个阻塞命令：`BLPOP`, `BLMOVE`...
 - `BMOVE` # 以原子方式将元素从源列表移动到目标列表。如果源列表为空，该命令将阻塞，直到有新元素可用.
 
 ::: tip 详细List命令
-🔗 [Lists命令列表](https://redis.io/docs/latest/commands/?group=list)
+🔗 [List命令列表](https://redis.io/docs/latest/commands/?group=list)
 :::
 
-## Lists 编码(底层实现)
+### List 编码(底层实现)
 
 在`Redis.Version < 3.2`时，List的编码为`ZIPLIST`或`LINKEDLIST`，在`Redis.Version >= 3.2`时，List的编码为`QUICKLIST`，当`Redis.Version >= 7.0`后，`ZIPLIST`优化为`LISTPACK`，其本质也是一种压缩列表.
 
@@ -55,7 +55,7 @@ List对象保存的所有字符串长度都小于64字节，且对象元素个�
 ZIPLIST的底层使用压缩列表实现，内存排序紧凑，可以有效节省内存空间.
 
 > [!NOTE] 编码详解
-> 🔗 [查看ZIPLIST编码](./encoding-zip-list.md)
+> 🔗 [查看ZIPLIST编码](./encoding/ziplist.md)
 
 如果使用`LINKEDLIST`编码，是以链表的形式连接，在内存上不如`ZIPLIST`紧凑，所以只有在List元素个数或者节点长度比较大的时候，才会使用`LINKEDLIST`编码.
 
