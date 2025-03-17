@@ -10,7 +10,7 @@
       "@/*": ["./docs/.vitepress/theme"]
     }
   },
-  "include": ["docs/.vitepress/**/*"],
+  "include": ["./docs/.vitepress/**/*", "./docs/**/*"],
   "exclude": [
     "**/node_modules/**",
     "**/dist/**",
