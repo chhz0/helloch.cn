@@ -4,6 +4,7 @@ www.helloch.cn {
 
 helloch.cn {
 	root * /usr/share/caddy
+	try_files {path}.html {path}
 	file_server
 }
 
