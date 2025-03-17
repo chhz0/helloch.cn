@@ -1,9 +1,29 @@
+import { link } from 'fs'
+import { version } from 'os'
+import { text } from 'stream/consumers'
 import { DefaultTheme } from 'vitepress'
 
 const navConfig: DefaultTheme.NavItem[] = [
-  // { text: '算法', link: '/algo', activeMatch: '/algo/*' },
+  // {
+  //   text: 'API Reference',
+  //   items: [
+  //     {
+  //       text: 'Example',
+  //       link: '/home.html'
+  //     },
+  //     {
+  //       component: 'ApiPreference',
+  //       props: {
+  //         options: ['Options', 'Composition'],
+  //         defaultOption: 'Composition',
+  //       }
+  //     }
+  //   ]
+  // },
+
   {
     text: '后端',
+    link: 'backend',
     items: [
       { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
       { text: 'Network', link: '/network', activeMatch: '/network/*' },
@@ -16,7 +36,7 @@ const navConfig: DefaultTheme.NavItem[] = [
             activeMatch: '/golang/*',
           },
           { text: 'Java ☕', link: '/java', activeMatch: '/java/*' },
-          { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
+          // { text: 'Cangjie ✨', link: '/cangjie', activeMatch: '/cangjie/*' },
           // { text: 'JavaScript', link: '/javascript', activeMatch: '/javascript/*' },
           // { text: 'Rust', link: '/rust', activeMatch: '/rust/*' },
         ]
