@@ -3,6 +3,31 @@
 > [!NOTE] 
 > 日志记录由 [git_commit_2md.py](https://github.com/chhz0/helloch.cn/blob/blog/tools/git_commit_2md.py) 生成，其中部分内部md链接可能因为md文件的删除或者移动导致失效，推荐使用`Ctrl K`搜索文档. 
 
+## `2025-03-21`
+
+### Commit SHA: `251fe29`
+
+**Message**: docs: 新增并更新多个后端文档页面
+
+- 新增 Kafka、Linux、Git 等相关文档页面
+- 更新 .gitignore 文件，添加 .obsidian 忽略项
+- 优化导航栏配置，调整部分链接路径
+- 新增 Git 相关命令和提交规范文档
+- 更新 changelog.md，记录最新提交信息
+- Markdown Added:
+  - [archive/index.md](/archive/)
+  - [backend/git/git-README.md](/backend/git/git-README)
+  - [backend/git/git-commands.md](/backend/git/git-commands)
+  - [backend/git/git-commit-message.md](/backend/git/git-commit-message)
+  - [backend/git/index.md](/backend/git/)
+  - [backend/linux/index.md](/backend/linux/)
+  - [backend/mq/kafka/index.md](/backend/mq/kafka/)
+- Markdown Modified:
+  - [about/changelog.md](/about/changelog)
+  - [backend/algo/index.md](/backend/algo/)
+  - [index.md](/)
+  - [test.md](/test)
+
 ## `2025-03-17`
 
 ### Commit SHA: `bc1d328`
