@@ -95,7 +95,7 @@ def analyze_commits(repo_url_or_path, output_file):
                         if f.endswith('.md')
                     ]
                     if added_md:
-                        md_content += "- Added:\n"
+                        md_content += "- Markdown Added:\n"
                         for file in added_md:
                             file_path = file.removeprefix("docs/")
                             if file_path.endswith("index.md"):
@@ -113,7 +113,7 @@ def analyze_commits(repo_url_or_path, output_file):
                         if f.endswith('.md')
                     ]
                     if modified_md:
-                        md_content += "- Modified:\n"
+                        md_content += "- Markdown Modified:\n"
                         for file in modified_md:
                             file_path = file.removeprefix("docs/")
                             if file_path.endswith("index.md"):
@@ -131,7 +131,7 @@ def analyze_commits(repo_url_or_path, output_file):
                         if f.endswith('.md')
                     ]
                     if deleted_md:
-                        md_content += "- Deleted:\n"
+                        md_content += "- Markdown Deleted:\n"
                         for file in deleted_md:
                             file_path = file.removeprefix("docs/")
                             if file_path.endswith("index.md"):

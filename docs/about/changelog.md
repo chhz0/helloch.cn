@@ -3,7 +3,91 @@
 > [!NOTE] 
 > 日志记录由 [git_commit_2md.py](https://github.com/chhz0/helloch.cn/blob/blog/tools/git_commit_2md.py) 生成，其中部分内部md链接可能因为md文件的删除或者移动导致失效，推荐使用`Ctrl K`搜索文档. 
 
+## `2025-03-17`
+
+### Commit SHA: `bc1d328`
+
+**Message**: docs: 重构 Redis 文档结构并优化内容
+
+- 更新文档结构，使其更加清晰和有组织
+- 优化标题层级，提高可读性
+- 添加新章节，覆盖更多 Redis 相关主题
+- 调整内容格式，符合 VitePress 文档规范
+- Markdown Added:
+  - [backend/redis/arch/multi-thread.md](/backend/redis/arch/multi-thread)
+  - [backend/redis/data-types/Hash.md](/backend/redis/data-types/Hash)
+  - [backend/redis/data-types/List.md](/backend/redis/data-types/List)
+  - [backend/redis/data-types/Set.md](/backend/redis/data-types/Set)
+  - [backend/redis/data-types/String.md](/backend/redis/data-types/String)
+  - [backend/redis/data-types/encoding/hashtable.md](/backend/redis/data-types/encoding/hashtable)
+  - [backend/redis/data-types/encoding/index.md](/backend/redis/data-types/encoding/)
+  - [backend/redis/data-types/encoding/sds.md](/backend/redis/data-types/encoding/sds)
+  - [backend/redis/data-types/encoding/skiplist.md](/backend/redis/data-types/encoding/skiplist)
+  - [backend/redis/data-types/encoding/ziplist.md](/backend/redis/data-types/encoding/ziplist)
+- Markdown Modified:
+  - [backend/redis/arch/LRU-LFU.md](/backend/redis/arch/LRU-LFU)
+  - [backend/redis/arch/index.md](/backend/redis/arch/)
+  - [backend/redis/arch/redisDb.md](/backend/redis/arch/redisDb)
+  - [backend/redis/arch/single-thread.md](/backend/redis/arch/single-thread)
+  - [backend/redis/data-types/Stream.md](/backend/redis/data-types/Stream)
+  - [backend/redis/data-types/ZSet.md](/backend/redis/data-types/ZSet)
+  - [backend/redis/data-types/index.md](/backend/redis/data-types/)
+  - [backend/redis/index.md](/backend/redis/)
+  - [index.md](/)
+- Markdown Deleted:
+  - [backend/redis/arch/multi-thread-persistence.md](/backend/redis/arch/multi-thread-persistence)
+  - [backend/redis/data-types/Hashes.md](/backend/redis/data-types/Hashes)
+  - [backend/redis/data-types/Lists.md](/backend/redis/data-types/Lists)
+  - [backend/redis/data-types/Sets.md](/backend/redis/data-types/Sets)
+  - [backend/redis/data-types/Strings.md](/backend/redis/data-types/Strings)
+  - [backend/redis/data-types/chhz0.md](/backend/redis/data-types/chhz0)
+  - [backend/redis/data-types/encoding-hashtable.md](/backend/redis/data-types/encoding-hashtable)
+  - [backend/redis/data-types/encoding-sds.md](/backend/redis/data-types/encoding-sds)
+  - [backend/redis/data-types/encoding-skip-list.md](/backend/redis/data-types/encoding-skip-list)
+  - [backend/redis/data-types/encoding-zip-list.md](/backend/redis/data-types/encoding-zip-list)
+
+### Commit SHA: `934aaed`
+
+**Message**: feat(docs): 重构首页并添加 TODO 列表
+
+- 重新设计了首页布局，增加了 Projects in Github 和 TODO List 两个新部分
+- 添加了新的 GithubRepoCard 组件用于展示 Github 项目
+- 实现了可折叠的 TODO 列表，支持多级任务和链接跳转
+- 更新了 logo 图片，增加了暗黑模式支持
+- 优化了样式，提高了移动端适配性
+- Markdown Modified:
+  - [index.md](/)
+  - [test.md](/test)
+- Markdown Deleted:
+  - [github.repo.md](/github.repo)
+
+### Commit SHA: `eaf14d0`
+
+**Message**: feat(Caddyfile): update
+
+### Commit SHA: `d9b8188`
+
+**Message**: feat(docs): update
+
+## `2025-03-12`
+
+### Commit SHA: `ea31399`
+
+**Message**: feat(docs): 优化 GitHub Repo Card 组件中的编程语言展示
+
+- 移除编程语言的颜色块，替换为对应的语言图标
+- 新增编程语言图标 SVG 文件
+- 调整编程语言名称的显示逻辑
+- Markdown Modified:
+  - [test.md](/test)
+
 ## `2025-03-11`
+
+### Commit SHA: `2b415e7`
+
+**Message**: docs: update changelog.md
+- Markdown Modified:
+  - [about/changelog.md](/about/changelog)
 
 ### Commit SHA: `9bb655f`
 
@@ -15,7 +99,7 @@
 - 更新 GithubRepoCard 组件样式
 - 引入 tailwindcss 并调整全局样式
 - 移除不必要的配置和导入
-- Added:
+- Markdown Added:
   - [backend/algo/graph.md](/backend/algo/graph)
   - [backend/algo/index.md](/backend/algo/)
   - [backend/algo/linkedlist.md](/backend/algo/linkedlist)
@@ -64,10 +148,10 @@
   - [frontend/vitepress/index.md](/frontend/vitepress/)
   - [frontend/vitepress/markdown-examples.md](/frontend/vitepress/markdown-examples)
   - [frontend/vitepress/template-frontmatter.md](/frontend/vitepress/template-frontmatter)
-- Modified:
+- Markdown Modified:
   - [github.repo.md](/github.repo)
   - [test.md](/test)
-- Deleted:
+- Markdown Deleted:
   - [algo/graph.md](/algo/graph)
   - [algo/index.md](/algo/)
   - [algo/linkedlist.md](/algo/linkedlist)
@@ -123,19 +207,19 @@
 ### Commit SHA: `b1708bf`
 
 **Message**: docs(README): 更新项目说明和链接
-- Modified:
+- Markdown Modified:
   - [README.md](/README)
 
 ### Commit SHA: `f3fb510`
 
 **Message**: test: github action
-- Modified:
+- Markdown Modified:
   - [test.md](/test)
 
 ### Commit SHA: `36d0e7c`
 
 **Message**: chore: update
-- Modified:
+- Markdown Modified:
   - [github.repo.md](/github.repo)
   - [golang/index.md](/golang/)
   - [test.md](/test)
@@ -153,14 +237,14 @@
 - 调整文档样式和布局
 - 新增项目仓库页面
 - 更新首页内容
-- Added:
+- Markdown Added:
   - [github.repo.md](/github.repo)
   - [test.md](/test)
   - [vitepress/template-frontmatter.md](/vitepress/template-frontmatter)
-- Modified:
+- Markdown Modified:
   - [index.md](/)
   - [redis/data-types/Strings.md](/redis/data-types/Strings)
-- Deleted:
+- Markdown Deleted:
   - [template-readme.md](/template-readme)
 
 ## `2025-02-10`
@@ -172,7 +256,7 @@
 ### Commit SHA: `f8870a1`
 
 **Message**: feat: 新增python虚拟环境&修改makefile
-- Modified:
+- Markdown Modified:
   - [about/changelog.md](/about/changelog)
 
 ### Commit SHA: `72a9010`
@@ -190,9 +274,9 @@
 
 - 新增git commit转为md文件的py工具
 - 优化更新日志页面，记录所有提交信息
-- Added:
+- Markdown Added:
   - [about/changelog.md](/about/changelog)
-- Deleted:
+- Markdown Deleted:
   - [about/log.md](/about/log)
 
 ## `2025-02-08`
@@ -206,7 +290,7 @@
 - 优化站点主题样式，支持暗黑模式
 - 添加环境变量配置，支持 VitePress 相关设置
 - 更新 .gitignore 文件，忽略敏感信息
-- Modified:
+- Markdown Modified:
   - [index.md](/)
 
 ## `2025-02-07`
@@ -221,16 +305,16 @@
 - 调整导航栏和侧边栏内容
 - 更新首页布局和样式
 - 添加自定义主题样式
-- Added:
+- Markdown Added:
   - [tmp/emoji.md](/tmp/emoji)
   - [vitepress/api-examples.md](/vitepress/api-examples)
   - [vitepress/index.md](/vitepress/)
   - [vitepress/markdown-examples.md](/vitepress/markdown-examples)
-- Modified:
+- Markdown Modified:
   - [README.md](/README)
   - [about/site.md](/about/site)
   - [index.md](/)
-- Deleted:
+- Markdown Deleted:
   - [api-examples.md](/api-examples)
   - [markdown-examples.md](/markdown-examples)
 
@@ -242,11 +326,11 @@
 - 更新首页 featured 项目，替换为 goiam 和 go-component-base
 - 移除 gobitcask 项目
 - 修正 Redis 相关文档中的图片路径
-- Added:
+- Markdown Added:
   - [cangjie/basic-data-type.md](/cangjie/basic-data-type)
   - [cangjie/func.md](/cangjie/func)
   - [cangjie/index.md](/cangjie/)
-- Modified:
+- Markdown Modified:
   - [index.md](/)
   - [redis/arch/redisDb.md](/redis/arch/redisDb)
   - [redis/arch/single-thread.md](/redis/arch/single-thread)
@@ -256,7 +340,7 @@
 ### Commit SHA: `0cbc88c`
 
 **Message**: docs: 更新图片路径
-- Modified:
+- Markdown Modified:
   - [redis/data-types/Lists.md](/redis/data-types/Lists)
   - [redis/data-types/Sets.md](/redis/data-types/Sets)
   - [redis/data-types/Strings.md](/redis/data-types/Strings)
@@ -270,7 +354,7 @@
 **Message**: Merge pull request #3 from chhz0/blog
 
 Blog
-- Added:
+- Markdown Added:
   - [golang/grammar/index.md](/golang/grammar/)
   - [golang/principles/index.md](/golang/principles/)
   - [redis/arch/LRU-LFU.md](/redis/arch/LRU-LFU)
@@ -279,7 +363,7 @@ Blog
   - [redis/arch/single-thread.md](/redis/arch/single-thread)
   - [redis/data-types/chhz0.md](/redis/data-types/chhz0)
   - [rust/index.md](/rust/)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [index.md](/)
   - [redis/arch/index.md](/redis/arch/)
@@ -291,7 +375,7 @@ Blog
 
 - caddyfile 添加blog.helloch.cn重定向
 - 主页修改log -light -dark
-- Added:
+- Markdown Added:
   - [golang/grammar/index.md](/golang/grammar/)
   - [golang/principles/index.md](/golang/principles/)
   - [redis/arch/LRU-LFU.md](/redis/arch/LRU-LFU)
@@ -299,7 +383,7 @@ Blog
   - [redis/arch/redisDb.md](/redis/arch/redisDb)
   - [redis/arch/single-thread.md](/redis/arch/single-thread)
   - [rust/index.md](/rust/)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [index.md](/)
   - [redis/arch/index.md](/redis/arch/)
@@ -312,11 +396,11 @@ Blog
 **Message**: Merge pull request #2 from chhz0/blog
 
 Blog
-- Added:
+- Markdown Added:
   - [redis/data-types/Stream.md](/redis/data-types/Stream)
   - [redis/data-types/encoding-hashtable.md](/redis/data-types/encoding-hashtable)
   - [redis/data-types/encoding-skip-list.md](/redis/data-types/encoding-skip-list)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [index.md](/)
   - [redis/data-types/Hashes.md](/redis/data-types/Hashes)
@@ -332,16 +416,16 @@ Blog
 ### Commit SHA: `ff262f4`
 
 **Message**: chore: chhz0
-- Added:
+- Markdown Added:
   - [redis/data-types/chhz0.md](/redis/data-types/chhz0)
 
 ### Commit SHA: `3b4914d`
 
 **Message**: docs: redis/data-types/* 基本更新完成
-- Added:
+- Markdown Added:
   - [redis/data-types/Stream.md](/redis/data-types/Stream)
   - [redis/data-types/encoding-skip-list.md](/redis/data-types/encoding-skip-list)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [index.md](/)
   - [redis/data-types/Sets.md](/redis/data-types/Sets)
@@ -361,9 +445,9 @@ Blog
 - 更新 Redis 文档侧边栏，增加集群和命令相关章节
 - 新增 Redis 数据类型和编码方式相关文档
 - 更新网站日志
-- Added:
+- Markdown Added:
   - [redis/data-types/encoding-hashtable.md](/redis/data-types/encoding-hashtable)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [redis/data-types/Hashes.md](/redis/data-types/Hashes)
   - [redis/data-types/Sets.md](/redis/data-types/Sets)
@@ -377,7 +461,7 @@ Blog
 **Message**: Merge pull request #1 from chhz0/blog
 
 Blog
-- Added:
+- Markdown Added:
   - [about/log.md](/about/log)
   - [about/site.md](/about/site)
   - [algo/graph.md](/algo/graph)
@@ -425,7 +509,7 @@ Blog
 - 优化算法文档格式
 - 添加 Docker 和 Golang 新建文档
 - 更新 VitePress 配置
-- Added:
+- Markdown Added:
   - [docker/docker-compose.md](/docker/docker-compose)
   - [docker/docker-deploy.md](/docker/docker-deploy)
   - [docker/docker.md](/docker/docker)
@@ -446,7 +530,7 @@ Blog
   - [redis/data-types/encoding-sds.md](/redis/data-types/encoding-sds)
   - [redis/data-types/encoding-zip-list.md](/redis/data-types/encoding-zip-list)
   - [redis/interview/index.md](/redis/interview/)
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
   - [algo/graph.md](/algo/graph)
   - [algo/index.md](/algo/)
@@ -458,7 +542,7 @@ Blog
   - [redis/data-types/ZSet.md](/redis/data-types/ZSet)
   - [redis/data-types/index.md](/redis/data-types/)
   - [redis/index.md](/redis/)
-- Deleted:
+- Markdown Deleted:
   - [redis/data-types/Hash.md](/redis/data-types/Hash)
   - [redis/data-types/List.md](/redis/data-types/List)
   - [redis/data-types/String.md](/redis/data-types/String)
@@ -471,7 +555,7 @@ Blog
 
 - 将 Redis 相关文档的路径从绝对路径修改为相对路径
 - 修正了 Redis 数据类型文档的链接格式
-- Modified:
+- Markdown Modified:
   - [about/log.md](/about/log)
 
 ### Commit SHA: `c6a1c99`
@@ -483,7 +567,7 @@ Blog
 - 添加关于本站和更新日志页面
 - 优化首页内容，包括 TODO 列表和更新日志链接
 - 引入 Algolia 搜索配置
-- Added:
+- Markdown Added:
   - [about/log.md](/about/log)
   - [about/site.md](/about/site)
   - [algo/graph.md](/algo/graph)
@@ -499,7 +583,7 @@ Blog
   - [redis/data-types/ZSet.md](/redis/data-types/ZSet)
   - [redis/data-types/index.md](/redis/data-types/)
   - [redis/index.md](/redis/)
-- Modified:
+- Markdown Modified:
   - [index.md](/)
 
 ## `2024-12-11`
@@ -518,12 +602,12 @@ Blog
 - 更新侧边栏结构，增加计算机相关子目录
 - 添加 GitHub 编辑链接
 - 更新底部版权信息，增加 MIT License 链接
-- Added:
+- Markdown Added:
   - [guide/index.md](/guide/)
   - [template-readme.md](/template-readme)
-- Modified:
+- Markdown Modified:
   - [index.md](/)
-- Deleted:
+- Markdown Deleted:
   - [vitepress-readme.md](/vitepress-readme)
 
 ### Commit SHA: `8234d30`
@@ -533,7 +617,7 @@ Blog
 ### Commit SHA: `4fc561b`
 
 **Message**: docs: 完善网站配置并添加导航栏
-- Modified:
+- Markdown Modified:
   - [index.md](/)
 
 ### Commit SHA: `b554e4e`
@@ -545,13 +629,13 @@ Blog
 ### Commit SHA: `313abe9`
 
 **Message**: Update README.md
-- Modified:
+- Markdown Modified:
   - [README.md](/README)
 
 ### Commit SHA: `ab8a1ff`
 
 **Message**: docs: 初始化 VitePress 项目结构和配置
-- Added:
+- Markdown Added:
   - [api-examples.md](/api-examples)
   - [index.md](/)
   - [markdown-examples.md](/markdown-examples)
@@ -560,6 +644,6 @@ Blog
 ### Commit SHA: `a2688c3`
 
 **Message**: Initial commit
-- Added:
+- Markdown Added:
   - [README.md](/README)
 

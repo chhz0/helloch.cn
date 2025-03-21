@@ -8,7 +8,7 @@ const navConfig: DefaultTheme.NavItem[] = [
     text: '后端',
     activeMatch: '/backend/*',
     items: [
-      { text: 'Linux', link: '/linux', activeMatch: '/linux/*' },
+      { text: 'Linux', link: '/backend/linux', activeMatch: '/linux/*' },
       { text: 'Network', link: '/network', activeMatch: '/network/*' },
       {
         text: 'langs',
@@ -31,19 +31,19 @@ const navConfig: DefaultTheme.NavItem[] = [
       },
       { text: 'message queue',
         items: [
-          // { text: 'RabbitMQ', link: '/middleware/rabbitmq', activeMatch: '/middleware/rabbitmq/*' },
-          { text: 'Kafka', link: '/middleware/kafka', activeMatch: '/middleware/kafka/*' },
-          // { text: 'NATS', link: '/middleware/nats', activeMatch: '/middleware/nats/*' },
-          // { text: 'RocketMQ', link: '/middleware/rocketmq', activeMatch: '/middleware/rocketmq/*' },
-          // { text: 'Pulsar', link: '/middleware/pulsar', activeMatch: '/middleware/pulsar/*' },
+          // { text: 'RabbitMQ', link: '/backend/rabbitmq', activeMatch: '/backend/rabbitmq/*' },
+          { text: 'Kafka', link: '/backend/mq/kafka', activeMatch: '/kafka/*' },
+          // { text: 'NATS', link: '/backend/nats', activeMatch: '/backend/nats/*' },
+          // { text: 'RocketMQ', link: '/backend/rocketmq', activeMatch: '/backend/rocketmq/*' },
+          // { text: 'Pulsar', link: '/backend/pulsar', activeMatch: '/backend/pulsar/*' },
         ]
       },
-      { text: 'Git', link: '/middleware/git', activeMatch: '/middleware/git/*'  },
-      { text: 'Docker', link: '/middleware/docker', activeMatch: '/middleware/docker/*'  },
+      { text: 'Git', link: '/backend/git', activeMatch: '/backend/git/*'  },
+      { text: 'Docker', link: '/backend/docker', activeMatch: '/backend/docker/*'  },
       // { text: 'http代理',
       //   items: [
-        //     { text: 'Nginx', link: '/middleware/nginx', activeMatch: '/middleware/nginx/*'  },
-        //     { text: 'Caddy', link: '/middleware/caddy', activeMatch: '/middleware/caddy/*'  },
+        //     { text: 'Nginx', link: '/backend/nginx', activeMatch: '/backend/nginx/*'  },
+        //     { text: 'Caddy', link: '/backend/caddy', activeMatch: '/backend/caddy/*'  },
         //   ]
         // }
       ]

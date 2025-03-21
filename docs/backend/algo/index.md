@@ -1,8 +1,7 @@
----
-next:
-    text: '数组'
-    link: /algo/array
----
+<h1 style="color:var(--vp-c-text-1)">Algorithm</h1>
+
+[toc]
+
 # 算法
 
 - 复杂度分析：时间复杂度和空间复杂度
@@ -25,3 +24,7 @@ next:
 - [leetcode](https://leetcode.cn/)⭐
 - [刷题计划](https://github.com/krahets/LeetCode-Book/blob/main/sword_for_offer/%E5%89%91%E6%8C%87%20Offer%20%E5%88%B7%E9%A2%98%E8%AE%A1%E5%88%92.md)
 :::
+
+## 数据结构
+
+常见的数据结构包括：`数组`，`链表`，`栈`，`队列`，`哈希表`，`树`，`图`，从逻辑结构上，它们可以分为 `线性结构` 和 `非线性结构`

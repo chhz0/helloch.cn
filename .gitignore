@@ -7,3 +7,4 @@ venc
 .env
 .env.local
 *.env.*.local
+.obsidian

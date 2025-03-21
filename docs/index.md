@@ -41,8 +41,14 @@ hero:
 
 ## Projects in Github <Badge type="tip" text="what I'm doing" />
 
+<div class="card-grid">
+  <img  src="https://github-readme-stats.vercel.app/api/top-langs/?username=chhz0&layout=compact&theme=tokyonight" />
+  <!-- <img  src="https://github-readme-stats.vercel.app/api?username=chhz0&show_icons=true&theme=radical" /> -->
+</div>
+
+
 <h3 style="color:#00ADD8">Golang  <Badge type="tip" text="Proj" /></h3>
-<div class="repo-grid">
+<div class="card-grid">
   <GithubRepoCard
     v-for="repo in golangRepos"
     :owner="repo.owner"
@@ -50,7 +56,7 @@ hero:
 </div>
 
 <h3 style="color:#3178c6">TypeScript  <Badge type="tip" text="Proj" /></h3>
-<div class="repo-grid">
+<div class="card-grid">
   <GithubRepoCard
     v-for="repo in tsRepos"
     :owner="repo.owner"
@@ -153,7 +159,7 @@ const todos = [
 </script>
 
 <style>
-.repo-grid {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
@@ -162,7 +168,7 @@ const todos = [
 
 /* 移动端适配 */
 @media (max-width: 640px) {
-  .repo-grid {
+  .card-grid {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
