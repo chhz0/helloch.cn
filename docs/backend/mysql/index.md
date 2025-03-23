@@ -1,8 +1,15 @@
 ---
-next:
-  text: 'MySQL - 索引类型'
-  link: '/mysql/mysql-index'
+title: MySQL
+navbar: true
+aside: true
 ---
+
+<TitleSvgIcon svg-path="/svg/icons/mysql.svg" title="MySQL"/>
+
+[[toc]]
+
+---
+
 # MySQL <Badge type="tip" text="MySQL" />
 
 - 安装

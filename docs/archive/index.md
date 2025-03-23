@@ -21,6 +21,6 @@ import { useData } from 'vitepress'  // 添加useData导入
 const { frontmatter } = useData()
 </script>
 
-# 文章归档
+<TitleSvgIcon svg-path="/svg/icons/archive.svg" title="归档文章"/>
 
 <ArchivePage :posts="frontmatter.posts" />

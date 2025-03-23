@@ -1,13 +1,12 @@
 ---
-title: linux
+title: Linux
 navbar: true
 aside: true
 ---
-
-<h1 style="color:var(--vp-c-text-1)">Linux</h1>
+<TitleSvgIcon svg-path="/svg/icons/linux.svg" title="Linux"/>
 
 [[toc]]
 
 ---
 
-# Linux <Badge type="tip" text="Linux" />
+# Linux简介

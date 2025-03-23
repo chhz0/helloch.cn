@@ -22,6 +22,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "lucide-vue-next": "^0.482.0"
+    "lucide-vue-next": "^0.482.0",
+    "vue-pdf-embed": "^2.1.2"
   }
 }

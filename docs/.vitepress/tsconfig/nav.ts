@@ -9,7 +9,7 @@ const navConfig: DefaultTheme.NavItem[] = [
     activeMatch: '/backend/*',
     items: [
       { text: 'Linux', link: '/backend/linux', activeMatch: '/linux/*' },
-      { text: 'Network', link: '/network', activeMatch: '/network/*' },
+      { text: 'Network', link: '/backend/net', activeMatch: '/net/*' },
       {
         text: 'langs',
         items: [
@@ -51,8 +51,8 @@ const navConfig: DefaultTheme.NavItem[] = [
   {
     text: '前端',
     items: [
-      { text: 'Vue', link: '/vue', activeMatch: '/vue/*' },
-      { text: 'React', link: '/react', activeMatch: '/react/*' },
+      { text: 'Vue', link: '/frontend/vue', activeMatch: '/vue/*' },
+      { text: 'React', link: '/frontend/react', activeMatch: '/react/*' },
     ]
   },
   {

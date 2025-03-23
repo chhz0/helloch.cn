@@ -42,7 +42,7 @@ export default defineConfig({
 
     editLink: {
       pattern: GITHUB_REPO_EDIT+':path',
-      text: '提供建议X﹏X'
+      text: '帮助我改善此页面！'
     },
 
     docFooter: {

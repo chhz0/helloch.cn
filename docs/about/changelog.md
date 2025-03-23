@@ -1,9 +1,21 @@
-# 更新日志 <Badge type="tip" text="Log" />
+<TitleSvgIcon svg-path="/svg/icons/log.svg" title="更新日志"/> <Badge type="tip" text="Log" />
 
 > [!NOTE] 
 > 日志记录由 [git_commit_2md.py](https://github.com/chhz0/helloch.cn/blob/blog/tools/git_commit_2md.py) 生成，其中部分内部md链接可能因为md文件的删除或者移动导致失效，推荐使用`Ctrl K`搜索文档. 
 
 ## `2025-03-21`
+
+### Commit SHA: `263cab7`
+
+**Message**: Merge branch 'vitepress' of github.com:chhz0/helloch.cn into vitepress
+- Markdown Modified:
+  - [README.md](/README)
+
+### Commit SHA: `327c529`
+
+**Message**: docs: 更新 changelog.md 记录最新提交信息
+- Markdown Modified:
+  - [about/changelog.md](/about/changelog)
 
 ### Commit SHA: `251fe29`
 
@@ -29,6 +41,12 @@
   - [test.md](/test)
 
 ## `2025-03-17`
+
+### Commit SHA: `e4b7c40`
+
+**Message**: Update README.md
+- Markdown Modified:
+  - [README.md](/README)
 
 ### Commit SHA: `bc1d328`
 

@@ -4,7 +4,7 @@ navbar: true
 aside: true
 ---
 
-<h1 style="color:var(--vp-c-text-1)">Git</h1>
+<TitleSvgIcon svg-path="/svg/icons/git.svg" title="Git"/>
 
 [[toc]]
 

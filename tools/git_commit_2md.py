@@ -74,7 +74,13 @@ def analyze_commits(repo_url_or_path, output_file):
             key=lambda x: datetime.strptime(x, "%Y-%m-%d"),
             reverse=True)
 
-        md_content = "# 更新日志 <Badge type=\"tip\" text=\"Log\" />\n\n"
+        # md_content = "# 更新日志 <Badge type=\"tip\" text=\"Log\" />\n\n"
+        md_content = (
+            "<TitleSvgIcon svg-path=\"/svg/icons/log.svg\" "
+            "title=\"更新日志\"/> "
+            "<Badge type=\"tip\" text=\"Log\" />\n\n"
+        )
+
         md_content += (
             "> [!NOTE] \n"
             "> 日志记录由 [git_commit_2md.py]"

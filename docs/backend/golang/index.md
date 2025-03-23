@@ -1,6 +1,12 @@
 ---
-title: Go
-archived: true
-date: 2023-10-15
+title: Golang
+navbar: true
+aside: true
 ---
-# Golang
+
+<TitleSvgIcon svg-path="/svg/langs/golang.svg" title="Golang"/>
+
+[[toc]]
+
+---
+# Golang 简介 <Badge type="tip" text="Golang" />
