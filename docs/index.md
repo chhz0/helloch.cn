@@ -43,7 +43,7 @@ hero:
 
 <div class="card-grid">
   <img  src="https://github-readme-stats.vercel.app/api/top-langs/?username=chhz0&layout=compact&theme=tokyonight" />
-  <!-- <img  src="https://github-readme-stats.vercel.app/api?username=chhz0&show_icons=true&theme=radical" /> -->
+  <img  src="https://github-readme-stats.vercel.app/api?username=chhz0&show_icons=true&theme=radical" />
 </div>
 
 
@@ -78,8 +78,7 @@ import { ref } from "vue";
 import { GithubIcon } from ".vitepress/theme/components/svg/icons.ts"
 const golangRepos = ref([
   { owner: "chhz0", repoName: "goiam" },
-  { owner: "chhz0", repoName: "gojob" },
-  { owner: "chhz0", repoName: "gokit" },
+  { owner: "chhz0", repoName: "goose" },
   { owner: "chhz0", repoName: "go-bitcask" }
 ]);
 const tsRepos = ref([
