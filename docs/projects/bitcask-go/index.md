@@ -1,4 +1,4 @@
---- 
+---
 title:  "[kv存储引擎] golang实现"
 description: "基于bitcask实现的KV存储引擎"
 tags:  ["golang", "bitcask"]
@@ -47,7 +47,7 @@ bitcask存储模型是由提供分布式存储系统的企业Riak提出
 - `ksz`：key size，key的大小
 - `value_sz`：value size，value的大小
 - `key`：用户实际存储的key
-- `value`：用户实际存储的value 
+- `value`：用户实际存储的value
 
 ```text
 crc | tstamp | ksz | value_sz | key | value
@@ -74,7 +74,7 @@ key --> file_id | value_sz | value_pos | tstamp
 随着 bitcsk 存储的数据越来越多，旧数据也可能越来越多，这里需要一个merge的过程来清理所有无效的数据
 merge过程会遍历所有不可变的旧数据文件，将所有有效的数据重新写到新的数据文件中，并且将旧的数据文件删除
 
-![merge-hint](./image/merge-hint.jpg)
+![merge-hint](/images/merge-hint.jpg)
 
 merge完成后，会为每个数据文件生成一个hint文件，hint文件可以看作全部数据的索引，它不存储实际的value
 hint文件在bitcask启动的时候直接加载，快速构建索引，不用全部重新区加载数据文件
@@ -168,7 +168,7 @@ type IOManager interface {
 对于数据文件从操作，增加一个目录文件来存放data
 
 至此，`go-bitDB`的存储引擎架构就清晰了
-![go-bitDb存储引擎](./image/kv-存储引擎.jpg)
+![go-bitDb存储引擎](/images/kv-engine.jpg)
 
 ## 4. 数据读写删流程
 
@@ -221,7 +221,7 @@ type LogRecord struct{
 
 > 特殊case：
 > 当删除数据时，追加的记录到了文件的末尾，如果这条记录恰好是数据文件的最后一条记录，并且这个记录的长度没有超过maxHeaderSize，但是读取header的时候，是按照maxHeaderSize读取，可能造成EOF错误
-> 
+>
 > 针对case：需要在读取的时候，判断是否超过文件的大小，否则只读取到文件的末尾即可
 
 
@@ -268,7 +268,7 @@ type FileIO struct {
 读取LogRecord，根据偏移offset读取指定位置的LogRecord信息
 ```text
 LogRecord定义如下所示：
-|        header                    |        Key/Value          |   
+|        header                    |        Key/Value          |
 crc | type | ksz | value_sz |       key    |     value
 ```
 分为两部分：
